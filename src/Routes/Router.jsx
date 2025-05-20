@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router";
 import HomeLayouts from "../components/Layouts/HomeLayouts";
 import Home from "../components/Components/Home";
 import Footer from "../components/Components/Footer";
+import UserProfile from "../components/Components/userProfile";
+import Login from "../components/UserMaintain/Login";
+import Signup from "../components/UserMaintain/Signup";
 
 const router = createBrowserRouter([
     {
@@ -13,8 +16,17 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: 'footer',
-                Component: Footer
+                path: '/userProfile',
+                loader: () => fetch('http://localhost:3000/profile'),
+                element: <UserProfile></UserProfile>
+            },
+            {
+                path: 'login',
+                element: <Login></Login>
+            },
+            {
+                path: 'signup',
+                element: <Signup></Signup>
             }
         ]
     }
