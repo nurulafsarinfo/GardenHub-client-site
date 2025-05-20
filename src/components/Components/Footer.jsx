@@ -1,33 +1,63 @@
 import React from 'react';
+import { FaRegCopy } from 'react-icons/fa';
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from 'react-icons/fa6';
+
 const Footer = () => {
     return (
-        <div className='bg-amber-100 text-green-900 py-6 h-80 w-full p-18'>
+        <div className='bg-amber-100 text-green-900 py-6 w-full '>
+            <div className='text-green-900 md:p-18 p-10'>
+                <div className='md:flex md:flex-row flex-col gap-5 justify-between'>
+                    <div>
+                        <p>Contact Info</p>
+                        <p className='text-4xl my-2'>Let's Discuss Your <br />
+                            Vision. With Us</p>
+
+                        <button className="flex bg-yellow-200 text-amber-900 font-semibold py-2 px-4 rounded-full hover:bg-yellow-400 transition">
+                            Shedule a call now <IoIosArrowRoundForward className='w-10 h-6' size={30} />
+                        </button>
+
+                        <p className='mt-4 mb-1'>Or Email Us At</p>
+                        <button className="flex items-center gap-2 bg-slate-300 text-gray-500 font-semibold py-2 px-4 rounded-full hover:bg-gray-400 hover:text-gray-200 transition">
+                            mdnurulafsar123afsar@gmail.com <FaRegCopy className='' />
+                        </button>
+
+                    </div>
+
+                    <div className='my-8'>
+                        <p className='md:text-2xl text-xl font-medium mb-3'>Terms & Conditions</p>
+                        <ul className='md:text-lg text-sm'>
+                            <li>User Accounts & Security</li>
+                            <li>Use of Services</li>
+                            <li>Prohibited Conduct</li>
+                            <li>Intellectual Property</li>
+                            <li>Limitation of Liability</li>
+                        </ul>
+                    </div>
+
+                    <div className='space-y-5'>
+                        <p className='md:text-2xl text-lg font-medium'>Social Link</p>
+                        <div className='md:inline-block flex gap-2'>
+
+                            <a href="https://twitter.com" target='_blank'> <FaXTwitter className='hover:bg-yellow-200 p-1  rounded-sm' size={40} /></a>
+
+                            <a href="https://facebook.com" target='_blank'> <FaFacebook className='hover:bg-yellow-200 p-1  rounded-sm' size={40} /></a>
+
+                            <a href="https://instagram.com" target='_blank'> <FaInstagram className='hover:bg-yellow-200 p-1  rounded-sm' size={40} /></a>
+
+                            <a href="https://linkedin.com" target='_blank'> <FaLinkedin className='hover:bg-yellow-200 p-1  rounded-sm' size={40} /></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
             <div>
-                <div>
-                    <p>Contact Info</p>
-                    <p className='text-4xl my-2'>Let's Discuss Your <br />
-                        Vision. With Us</p>
-
-                    <button className="flex bg-yellow-200 text-amber-900 font-semibold py-2 px-4 rounded-full hover:bg-yellow-400 transition">
-                        Shedule a call now <IoIosArrowRoundForward className='w-10 h-6' size={30}/>
-                    </button>
-
-                    <p>Or Email Us At</p>
-                                        <button className="flex bg-yellow-200 text-amber-900 font-semibold py-2 px-4 rounded-full hover:bg-yellow-400 transition">
-                        Shedule a call now <IoIosArrowRoundForward className='w-10 h-6' size={30}/>
-                    </button>
-
-                </div>
-
-                <div>
-                    <p>Terms & Conditions</p>
-                </div>
-
-                <div>
-                    <p>Social Link</p>
-                </div>
-
+                <hr className='text-gray-300' />
+                <p className="text-center text-sm text-gray-600 py-2">
+                    &copy; 2025 GardenHub. All rights reserved.
+                </p>
             </div>
         </div >
     );
