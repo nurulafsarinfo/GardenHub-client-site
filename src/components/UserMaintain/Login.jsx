@@ -2,9 +2,10 @@ import React, { use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-    const {loginUser} = use(AuthContext);
+    const { loginUser } = use(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -13,17 +14,26 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        loginUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log("after login ", user);
-            navigate(`${location.state ? location.state : '/'}`)
-        })
-        .catch(error => {
-            console.log('login error- ', error.message);
-            toast.error(error.message);
-        })
         
+
+        loginUser(email, password)
+            .then(result => {
+                const user = result.use;
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Logged in Successfully!",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                console.log("after login ", user);
+                navigate(`${location.state ? location.state : '/'}`)
+            })
+            .catch(error => {
+                console.log('login error- ', error.message);
+                toast.error(error.message);
+            })
+
     }
 
     return (
