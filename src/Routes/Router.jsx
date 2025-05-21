@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import HomeLayouts from "../components/Layouts/HomeLayouts";
 import Home from "../components/Components/Home";
 import Footer from "../components/Components/Footer";
-import UserProfile from "../components/Components/userProfile";
+import UserProfile from "../components/Components/GardenersProfile";
 import Login from "../components/UserMaintain/Login";
 import Signup from "../components/UserMaintain/Signup";
 import Loader from "../components/Components/Loader";
@@ -14,25 +14,22 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
+                loader: () => fetch('http://localhost:3000/gardeners'),
                 element: <Home></Home>
             },
             {
-                path: '/userProfile',
-                loader: () => fetch('http://localhost:3000/profile'),
-                element: <UserProfile></UserProfile>
-            },
-            {
-                path: 'login',
+                path: '/login',
                 element: <Login></Login>
             },
             {
-                path: 'signup',
+                path: '/signup',
                 element: <Signup></Signup>
             },
             {
-                path: 'loader',
-                element: <Loader></Loader>
+                path: '/gardentips',
+                element
             }
+
         ]
     }
 ])

@@ -43,7 +43,7 @@ const Navbar = () => {
 
     return (
         <div className=''>
-            <div className="navbar bg-green-500 shadow-lg md:px-16 px-10">
+            <div className="navbar bg-green-500 shadow-lg md:px-14 px-8">
                 <div className="navbar-start">
                     <img src={logo} className='md:w-12 w-10 md:h-12 h-10 rounded-full' alt="" />
                     <a className="font-semibold text-xl md:text-3xl text-white mx-2">GardenHub</a>
