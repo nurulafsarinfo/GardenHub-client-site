@@ -5,6 +5,7 @@ import Footer from "../components/Components/Footer";
 import UserProfile from "../components/Components/userProfile";
 import Login from "../components/UserMaintain/Login";
 import Signup from "../components/UserMaintain/Signup";
+import Loader from "../components/Components/Loader";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: 'signup',
                 element: <Signup></Signup>
+            },
+            {
+                path: 'loader',
+                element: <Loader></Loader>
             }
         ]
     }
