@@ -4,7 +4,7 @@ import GardenersProfile from './GardenersProfile';
 
 const Home = () => {
     const gardenersProfile = useLoaderData();
-    console.log(gardenersProfile);
+
     return (
         <div className='flex flex-wrap gap-3 mx-auto w-11/12'>
             {

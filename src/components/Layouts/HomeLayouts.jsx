@@ -21,7 +21,7 @@ const HomeLayouts = () => {
             <footer>
                 {/* <Footer></Footer> */}
             </footer>
-            <ToastContainer position="top-right" autoClose={3000}
+            <ToastContainer position="top-right" autoClose={5000}
                 closeOnClick={true}
                 pauseOnHover={true}
                 hideProgressBar={false}

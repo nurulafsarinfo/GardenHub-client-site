@@ -4,8 +4,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 
 const GardenersProfile = ({ gardener }) => {
     const { name, location, profile_pic, specialty, bio, experience_years } = gardener;
-    console.log(gardener);
-    console.log(profile_pic);
+
     return (
         <div className="w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-800">
             {/* Profile info section  */}

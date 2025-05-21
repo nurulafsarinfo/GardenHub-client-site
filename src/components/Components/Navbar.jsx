@@ -18,7 +18,8 @@ import Swal from 'sweetalert2';
 const Navbar = () => {
     const { user } = use(AuthContext);
     const navigate = useNavigate();
-    console.log(user);
+
+    // console.log("photo url ", user.photoURL)
 
     // if(loading && !user){
     //     return <Loader></Loader>
@@ -54,43 +55,47 @@ const Navbar = () => {
 
                     <NavLink to={'/explore'} className='text-xl font-medium text-amber-900 hover:bg-green-300 px-2 py-2 rounded-sm lg:inline-block hidden'>Explore Gardeners </NavLink>
 
-
-
                     <NavLink to={'/tips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Browse Tips </NavLink>
+
+                    <NavLink to={'/sharetips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Share Tips </NavLink>
                 </div>
 
 
                 <div className="navbar-end">
                     {
                         user ? <button onClick={handleSignOut} className="btn md:inline-block hidden text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400">SignOut</button> :
-                            <a className="btn md:inline-block hidden text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400">Login</a>
+                            <a className="btn md:inline-block hidden text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400 mx-1">Login</a>
                     }
 
                     {
-                        user ? <div> <img className='w-10 h-10 rounded-full border-2 border-yellow-300' src={user.photoURL} alt="" /></div> : <GiFarmer className='border-2 border-yellow-300 rounded-full' size={40} />
+                        user ? <div> <img className='w-11 h-11 mx-1 rounded-full border-3 border-yellow-300 bg-white' src={user.photoURL} alt="" /></div> : <GiFarmer className='border-2 border-yellow-300 rounded-full' size={40} />
                     }
+
+
 
                     <div className="dropdown">
                         {/* Menubar for small Device   */}
-
                         <div tabIndex={0} role="button" className="btn btn-ghost hover:bg-yellow-300 border-none mx-1  lg:hidden">
                             <MdMenuOpen className='text-amber-900' size={40} />
                         </div>
                         <ul
                             tabIndex={0}
                             className="menu menu-sm text-amber-900 dropdown-content bg-base-300 rounded-box z-1 mt-3 -ml-22 w-52 p-2 shadow">
-                                
+
                             <NavLink to={'/'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300
                             px-2 py-3 rounded-sm'>Home</NavLink>
 
                             <NavLink to={'/explore'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 px-2 py-3 rounded-sm'>Explore Gardeners </NavLink>
 
-                            <NavLink to={'/tips'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> Browse Tips </NavLink>
+                            <NavLink to={'/alltips'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> Browse Tips </NavLink>
+
+                            <NavLink to={'/sharetips'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> Share  Tips </NavLink>
 
                             {
                                 user ? <button onClick={handleSignOut} className="btn text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400">SignOut</button> :
-                                    <Link to={'/login'}  className="btn text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400">Login</Link>
+                                    <Link to={'/login'} className="btn text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400">Login</Link>
                             }
+
 
 
                         </ul>

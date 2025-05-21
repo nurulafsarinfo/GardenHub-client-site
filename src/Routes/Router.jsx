@@ -5,7 +5,9 @@ import Footer from "../components/Components/Footer";
 import UserProfile from "../components/Components/GardenersProfile";
 import Login from "../components/UserMaintain/Login";
 import Signup from "../components/UserMaintain/Signup";
-import Loader from "../components/Components/Loader";
+import FormGardenTips from "../components/Components/FormGardenTips";
+import PrivateRoute from "./privateRoute";
+import GardenersProfile from "../components/Components/GardenersProfile";
 
 const router = createBrowserRouter([
     {
@@ -26,8 +28,11 @@ const router = createBrowserRouter([
                 element: <Signup></Signup>
             },
             {
-                path: '/gardentips',
-                element
+                path: '/sharetips',
+                element: <PrivateRoute>
+                    <FormGardenTips></FormGardenTips>
+                </PrivateRoute>
+                
             }
 
         ]

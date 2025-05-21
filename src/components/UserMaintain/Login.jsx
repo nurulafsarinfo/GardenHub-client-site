@@ -5,7 +5,8 @@ import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-    const { loginUser, googleLogin, setUser } = use(AuthContext);
+
+    const { loginUser, googleLogin, setUser, } = use(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -40,6 +41,9 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 const user = result.user;
+                console.log("google login user", user)
+                console.log("google login user name and email- ", user.email, user.displayName);
+
                 if (!user) {
                     toast.error('LogIn Failed. No user return from Google')
                     return;
@@ -87,7 +91,7 @@ const Login = () => {
                     <p className='text-amber-900 md:text-lg text-xs mt-2'>Don't have an account? <Link to='/signup' className='underline text-green-600'>Register</Link></p>
                 </form>
 
-                
+
                 <div className='flex justify-around text-gray-400 my-5'>
                     <p>----------------</p><span>Or</span> <p>----------------</p>
                 </div>

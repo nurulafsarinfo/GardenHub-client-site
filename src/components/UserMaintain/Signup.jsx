@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 
 const Signup = () => {
-    const { createUser, googleLogin, setUser } = use(AuthContext);
+    const { createUser, googleLogin, updateUserProfile, setUser } = use(AuthContext);
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
@@ -16,10 +16,15 @@ const Signup = () => {
         const form = e.target;
         const formData = new FormData(form);
         const inputDatas = Object.fromEntries(formData.entries());
-        // console.log('input datas is ',inputDatas.email)
         const email = inputDatas.email;
         const password = inputDatas.password;
+        const name = inputDatas.name;
+        const photo = inputDatas.photo;
 
+        console.log("datatataata", name, email, photo);
+        console.log("datatataata", name, email, photo);
+       
+       
         // password validation
         setError('');
         if (!/(?=.*[a-z])/.test(password)) {
@@ -41,7 +46,16 @@ const Signup = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                setUser(user);
+
+            updateUserProfile({ displayName: name, photoURL: photo})
+            .then(() => {
+                setUser({...user, displayName: name, photoURL: photo});
+            })
+            .catch(error => {
+                toast.error("User could't updated.",error.message);
+            })
+
+                form.reset();
                 console.log('user is ', user);
                 Swal.fire({
                     position: "center",
@@ -56,6 +70,10 @@ const Signup = () => {
                 console.log(error.message);
                 toast.error(error.message);
             })
+
+            // update user profile 
+
+
     }
 
     const handleGoogleSignin = () => {
@@ -64,6 +82,7 @@ const Signup = () => {
         googleLogin()
             .then(result => {
                 const user = result.user;
+
                 if (!user) {
                     toast.error('LogIn Failed. No user return from Google')
                     return;
