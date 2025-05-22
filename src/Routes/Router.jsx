@@ -8,6 +8,10 @@ import Signup from "../components/UserMaintain/Signup";
 import FormGardenTips from "../components/Components/FormGardenTips";
 import PrivateRoute from "./privateRoute";
 import GardenersProfile from "../components/Components/GardenersProfile";
+import TipsPageLayout from "../components/Layouts/TipsPageLayout";
+import BrowseTips from "../components/Components/TipsComponents/BrowseTips";
+import TipsDetails from "../components/Components/TipsComponents/TipsDetails";
+import Loader from "../components/Components/Loader";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +21,7 @@ const router = createBrowserRouter([
             {
                 index: true,
                 loader: () => fetch('http://localhost:3000/gardeners'),
+                hydrateFallbackElement: <Loader></Loader>,
                 element: <Home></Home>
             },
             {
@@ -32,9 +37,33 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <FormGardenTips></FormGardenTips>
                 </PrivateRoute>
-                
+
             }
 
+        ]
+    },
+    {
+        path: '/tips',
+        element: <PrivateRoute>
+                    <TipsPageLayout></TipsPageLayout>
+                </PrivateRoute>,
+        children: [
+            {
+                path: '/tips/browsetips',
+                loader: () => fetch('http://localhost:3000/sharedtips'),
+                hydrateFallbackElement: <Loader></Loader>,
+                element: <PrivateRoute>
+                            <BrowseTips></BrowseTips>
+                         </PrivateRoute> 
+            },
+            {
+                path: '/tips/browsetips',
+                loader: () => fetch('http://localhost:3000/sharedtips'),
+                hydrateFallbackElement: <Loader></Loader>,
+                element: <PrivateRoute>
+                             <TipsDetails></TipsDetails>
+                         </PrivateRoute>
+            },
         ]
     }
 ])
