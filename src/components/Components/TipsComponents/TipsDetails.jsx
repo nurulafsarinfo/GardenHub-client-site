@@ -8,10 +8,10 @@ const TipsDetails = () => {
 
 
     return (
-        <div className='w-11/12 mx-auto h-[100vh] mt-5 mb-20 bg-base-100'>
+        <div className='w-11/12 mx-auto h-[100vh] mt-5 mb-50 bg-base-100'>
             <div>
                 <div className=' relative min-w-sm lg:h-[510px] md:h-[450px] h-[350px] border-2 border-amber-900 bg-base-200 rounded-2xl p-3'>
-                    <img className='lg:h-80 md:h-60 h-40 lg:min-w-100 md:min-w-80 max-w-60 absolute left-1/12 top-20 z-999 border-red-500 border-2 shadow-2xl drop-shadow-xl' src={data.images} alt="" />
+                    <img className='lg:h-80 md:h-60 h-40 lg:min-w-100 md:min-w-80 max-w-60 absolute left-1/12 top-20 z-999 border-red-500 bg-amber-200 border-2 shadow-2xl drop-shadow-xl' src={data.images} alt="" />
                     <img className=' lg:h-80 md:h-60 h-40 border-2 shadow-xl drop-shadow-2xl z-888  border-green-500 absolute top-7 lg:right-5/12 md:right-4/12 right-3/12' src="https://i.postimg.cc/PxcY5bPh/tree-plant.jpg" alt="" />
 
                     <img className=' lg:h-80 md:h-60 h-40 border-2 border-blue-500 absolute top-36 lg:right-2/12 md:right-1/12 right-10 shadow-2xl drop-shadow-2xl'
@@ -38,13 +38,13 @@ const TipsDetails = () => {
                         <p className='text-lg'>Category:</p>
                         <p>{category_level}</p>
                     </div>
-                    <div>
+                    <div className='mt-8'>
                         <fieldset className='border-2 border-gray-400 p-4 rounded-md'>
                             <legend className='text-sm font-medium text-gray-600 px-2'>Description</legend>
                             <p className='text-gray-500'>{description}</p>
                         </fieldset>
                     </div>
-                    <div>
+                    <div className='mt-8'>
                         <p className='text-gray-600'>Contact with- </p>
                         <div className='flex gap-3'>
                             <p className='italic text-gray-400 font-semibold'>Email- </p>

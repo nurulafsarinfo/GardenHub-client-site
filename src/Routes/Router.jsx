@@ -12,6 +12,7 @@ import TipsPageLayout from "../components/Layouts/TipsPageLayout";
 import BrowseTips from "../components/Components/TipsComponents/BrowseTips";
 import TipsDetails from "../components/Components/TipsComponents/TipsDetails";
 import Loader from "../components/Components/Loader";
+import MyTips from "../components/Components/TipsComponents/MyTips";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +65,13 @@ const router = createBrowserRouter([
                              <TipsDetails></TipsDetails>
                          </PrivateRoute>
             },
+            {
+                path: "/tips/mytips/:email",
+                loader: ({params}) => fetch(`http://localhost:3000/mytips/${params?.email}`),
+                element: <PrivateRoute>
+                            <MyTips></MyTips>
+                         </PrivateRoute>
+            }
         ]
     }
 ])

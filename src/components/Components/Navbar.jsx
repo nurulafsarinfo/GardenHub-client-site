@@ -53,13 +53,11 @@ const Navbar = () => {
                     <NavLink to={'/'} className='text-xl font-medium text-amber-900 hover:bg-green-300
                     px-3 py-2 rounded-sm lg:inline-block hidden'>Home</NavLink>
 
-                    <NavLink to={'/explore'} className='text-xl font-medium text-amber-900 hover:bg-green-300 px-2 py-2 rounded-sm lg:inline-block hidden'>Explore Gardeners </NavLink>
-
-                    <NavLink to={'/tips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Browse Tips </NavLink>
+                    <NavLink to={'/tips/browsetips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Browse Tips </NavLink>
 
                     <NavLink to={'/sharetips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Share Tips </NavLink>
 
-                    <NavLink to={'/tips/browsetips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Browse Tips </NavLink>
+                    <NavLink to={`/tips/mytips/${user?.email}`} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> My Tips </NavLink>
                 </div>
 
 
@@ -87,13 +85,11 @@ const Navbar = () => {
                             <NavLink to={'/'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300
                             px-2 py-3 rounded-sm'>Home</NavLink>
 
-                            <NavLink to={'/explore'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 px-2 py-3 rounded-sm'>Explore Gardeners </NavLink>
-
-                            <NavLink to={'/alltips'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> Browse Tips </NavLink>
-
-                            <NavLink to={'/sharetips'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> Share  Tips </NavLink>
+                            <NavLink to={'/sharetips'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> Share Tips </NavLink>
 
                             <NavLink to={'/tips/browsetips'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> Browse Tips </NavLink>
+
+                            <NavLink to={`/tips/mytips/${user?.email}`} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> My Tips </NavLink>
 
                             {
                                 user ? <button onClick={handleSignOut} className="btn text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400">SignOut</button> :

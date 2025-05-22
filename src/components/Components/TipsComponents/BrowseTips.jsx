@@ -8,7 +8,7 @@ const BrowseTips = () => {
 
     return (
         <div>
-            <div className="overflow-x-auto my-10">
+            <div className="overflow-x-auto my-10 mx-20">
                 <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
                     <thead className="bg-green-500 text-amber-900 text-left text-sm">
                         <tr>
@@ -23,7 +23,7 @@ const BrowseTips = () => {
                         {
                             alltips.map(tipsrow => {
                                 return (
-                                    <tr key={tipsrow._id} className="border-b">
+                                    <tr key={tipsrow._id} className="border-b border-b-amber-800">
                                         <td className="px-4 py-3">
                                             <img
                                                 src={tipsrow.images}
