@@ -57,8 +57,8 @@ const router = createBrowserRouter([
                          </PrivateRoute> 
             },
             {
-                path: '/tips/browsetips',
-                loader: () => fetch('http://localhost:3000/sharedtips'),
+                path: '/tips/details/:id',
+                loader: ({params}) => fetch(`http://localhost:3000/sharedtips/${params.id}`),
                 hydrateFallbackElement: <Loader></Loader>,
                 element: <PrivateRoute>
                              <TipsDetails></TipsDetails>

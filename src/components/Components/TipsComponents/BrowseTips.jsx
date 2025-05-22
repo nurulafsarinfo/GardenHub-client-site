@@ -35,7 +35,7 @@ const BrowseTips = () => {
                                         <td className="px-4 py-3">{tipsrow.category_level
                                         }</td>
                                         <td className="px-4 py-3">
-                                            <Link to={'/tips/browsetips'} className="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-md text-sm">
+                                            <Link to={`/tips/details/${tipsrow._id}`} className="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-md text-sm">
                                                 See More
                                             </Link>
                                         </td>
