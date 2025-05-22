@@ -14,6 +14,7 @@ import TipsDetails from "../components/Components/TipsComponents/TipsDetails";
 import Loader from "../components/Components/Loader";
 import MyTips from "../components/Components/TipsComponents/MyTips";
 import UpdateTips from "../components/Components/TipsComponents/UpdateTips";
+import AllGardeners from "../components/Components/AllGardeners";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
                     <FormGardenTips></FormGardenTips>
                 </PrivateRoute>
 
+            },
+            {
+                path:'/explorgardeners',
+                loader: () => fetch('http://localhost:3000/gardeners/all'),
+                element: <AllGardeners></AllGardeners>
             }
 
         ]

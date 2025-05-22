@@ -1,13 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { RiEdit2Fill } from "react-icons/ri";
+import Swal from 'sweetalert2';
 
 
 
 const MyTips = () => {
-    const mytips = useLoaderData();
+    const allTips = useLoaderData();
+    const [mytips, setMytips] = useState(allTips)
     console.log("my tips-", mytips);
+
+    const handleDeleteTips = (id) => {
+        console.log(id);
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:3000/sharedtips/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log("after delete", data)
+                        if (data.deletedCount) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your Coffee has been deleted.",
+                                icon: "success"
+                            });
+
+                            const remainingData = mytips.filter(tips => tips._id !== id);
+                            setMytips(remainingData);
+
+                        }
+                    })
+            }
+        })
+
+    }
 
     return (
         <div>
@@ -43,15 +81,14 @@ const MyTips = () => {
                                                     to={`/tips/updatetips/${tipsrow._id}`}
                                                     className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-md"
                                                 >
-                                                     <RiEdit2Fill size={24}/>
-                                                    
+                                                    <RiEdit2Fill size={24} />
+
                                                 </Link>
-                                                <Link
-                                                    to={`/tips/details/${tipsrow._id}`}
+                                                <button onClick={() => handleDeleteTips(tipsrow._id)}
                                                     className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-md"
                                                 >
-                                                   <RiDeleteBin2Fill size={24} />
-                                                </Link>
+                                                    <RiDeleteBin2Fill size={24} />
+                                                </button>
                                             </td>
                                         </tr>
                                     )

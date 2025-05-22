@@ -53,6 +53,7 @@ const Navbar = () => {
                     <NavLink to={'/'} className='text-xl font-medium text-amber-900 hover:bg-green-300
                     px-3 py-2 rounded-sm lg:inline-block hidden'>Home</NavLink>
 
+                    <NavLink to={'/explorgardeners'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Gardeners </NavLink>
                     <NavLink to={'/tips/browsetips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Browse Tips </NavLink>
 
                     <NavLink to={'/sharetips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Share Tips </NavLink>
@@ -87,6 +88,8 @@ const Navbar = () => {
 
                             <NavLink to={'/'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300
                             px-2 py-3 rounded-sm'>Home</NavLink>
+
+                            <NavLink to={'/explorgardeners'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> Explore Gardeners </NavLink>
 
                             <NavLink to={'/sharetips'} className=' md:text-lg text-sm font-medium text-amber-900 hover:bg-green-300 rounded-sm px-2 py-3'> Share Tips </NavLink>
 
