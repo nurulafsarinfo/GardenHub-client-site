@@ -15,6 +15,7 @@ import Loader from "../components/Components/Loader";
 import MyTips from "../components/Components/TipsComponents/MyTips";
 import UpdateTips from "../components/Components/TipsComponents/UpdateTips";
 import AllGardeners from "../components/Components/AllGardeners";
+import ErrorPage from "../components/Components/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
                 element: <Signup></Signup>
             },
             {
+                
                 path: '/sharetips',
                 element: <PrivateRoute>
                     <FormGardenTips></FormGardenTips>
@@ -56,7 +58,7 @@ const router = createBrowserRouter([
                     <TipsPageLayout></TipsPageLayout>
                 </PrivateRoute>,
         children: [
-            {
+            {    // get all tips 
                 path: '/tips/browsetips',
                 loader: () => fetch('http://localhost:3000/sharedtips'),
                 hydrateFallbackElement: <Loader></Loader>,
@@ -87,6 +89,10 @@ const router = createBrowserRouter([
                          </PrivateRoute>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
 ])
 
