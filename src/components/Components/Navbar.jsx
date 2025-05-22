@@ -57,14 +57,17 @@ const Navbar = () => {
 
                     <NavLink to={'/sharetips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Share Tips </NavLink>
 
-                    <NavLink to={`/tips/mytips/${user?.email}`} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> My Tips </NavLink>
+                {
+                    user ? 
+                    <NavLink to={`/tips/mytips/${user?.email}`} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> My Tips </NavLink>: <p></p>
+                }
                 </div>
 
 
                 <div className="navbar-end">
                     {
                         user ? <button onClick={handleSignOut} className="btn md:inline-block hidden text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400">SignOut</button> :
-                            <a className="btn md:inline-block hidden text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400 mx-1">Login</a>
+                                    <Link to={'/login'} className="btn md:inline-block hidden text-amber-900 mx-1 border-none bg-yellow-300 hover:bg-yellow-400">Login</Link>
                     }
 
                     {

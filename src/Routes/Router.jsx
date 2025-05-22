@@ -13,6 +13,7 @@ import BrowseTips from "../components/Components/TipsComponents/BrowseTips";
 import TipsDetails from "../components/Components/TipsComponents/TipsDetails";
 import Loader from "../components/Components/Loader";
 import MyTips from "../components/Components/TipsComponents/MyTips";
+import UpdateTips from "../components/Components/TipsComponents/UpdateTips";
 
 const router = createBrowserRouter([
     {
@@ -70,6 +71,13 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:3000/mytips/${params?.email}`),
                 element: <PrivateRoute>
                             <MyTips></MyTips>
+                         </PrivateRoute>
+            },
+            {
+                path: "/tips/updatetips/:id",
+                loader: ({params}) => fetch(`http://localhost:3000/sharedtips/${params.id}`),
+                element: <PrivateRoute>
+                           <UpdateTips></UpdateTips>
                          </PrivateRoute>
             }
         ]

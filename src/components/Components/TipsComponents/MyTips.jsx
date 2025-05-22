@@ -40,7 +40,7 @@ const MyTips = () => {
                                             }</td>
                                             <td className="px-4 py-3 space-x-1">
                                                 <Link
-                                                    to={`/tips/details/${tipsrow._id}`}
+                                                    to={`/tips/updatetips/${tipsrow._id}`}
                                                     className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-md"
                                                 >
                                                      <RiEdit2Fill size={24}/>
