@@ -9,7 +9,7 @@ const AllGardeners = () => {
 
     return (
         <div className='w-10/12 mx-auto my-10'>
-                <p className='text-5xl text-center text-amber-900'>All Gardeners Profile</p>
+                <p className='text-5xl text-center text-amber-900 dark:text-green-600'>All Gardeners Profile</p>
             <div className='flex flex-wrap mx-auto sm:my-16 my-10 gap-10'>
                 {
                     allgardeners.map(gardeners => {

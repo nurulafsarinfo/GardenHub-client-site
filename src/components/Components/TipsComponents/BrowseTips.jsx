@@ -23,21 +23,15 @@ const BrowseTips = () => {
             : `http://localhost:3000/sharedtips?difficulty=${difficulty}`
 
             console.log('Fetching from: ', url)
-            // Fetch API call-> 
-            // fetch(url)
-            // .then(res => res.json())
-            // .then(data => {
-            //     setAllTips(data);
-            // })
             const response = await fetch(url);
             if (!response.ok) throw new Error('Network response was not ok')
             const data = await response.json();
-        console.log('dataa is ', data)
+            console.log('dataa is ', data)
             setAllTips(data);
         } catch (error) {
             console.log("Error fetching tips:", error);
         } finally {
-            console.log("finnaly done")
+            console.log("finnaly done filterd tips")
         }
 
     }

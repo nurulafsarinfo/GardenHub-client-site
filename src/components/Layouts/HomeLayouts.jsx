@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 
 const HomeLayouts = () => {
     return (
-        <div>
+        <div className='dark:bg-gray-900 '>
 
             <nav>
                 <Navbar></Navbar>
@@ -19,7 +19,7 @@ const HomeLayouts = () => {
                 <Outlet></Outlet>
             </main>
             <footer>
-                {/* <Footer></Footer> */}
+                <Footer></Footer>
             </footer>
             <ToastContainer position="top-right" autoClose={5000}
                 closeOnClick={true}

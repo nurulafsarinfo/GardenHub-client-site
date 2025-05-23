@@ -15,7 +15,7 @@ const TipsPageLayout = () => {
                 <Outlet></Outlet>
             </main>
             <footer>
-                {/* <Footer></Footer> */}
+                <Footer></Footer>
             </footer>
         </div>
     );

@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/explorgardeners',
-                loader: () => fetch('http://localhost:3000/gardeners/all'),
+                loader: () => fetch('http://localhost:3000/gardeners'),
                 element: <AllGardeners></AllGardeners>
             }
 
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         children: [
             {    // get all tips 
                 path: '/tips/browsetips',
-                loader: () => fetch('http://localhost:3000/sharedtips'),
+                loader: () => fetch('http://localhost:3000/sharedtips/all'),
                 hydrateFallbackElement: <Loader></Loader>,
                 element: <PrivateRoute>
                             <BrowseTips></BrowseTips>

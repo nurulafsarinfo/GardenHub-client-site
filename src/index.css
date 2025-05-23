@@ -1,23 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,600&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
-
-/* @plugin "daisyui/theme" {
-    name: "light";
-    default: true;
-    --primary: #4CAF50;
-    --accent: #A8D5BA;
-    --warm: #F4D35E;
-    --earth: #6B4226;
-    --light: #F9F5EC;
-} */
-:root {
-  --primary-green: #4CAF50;
-  --accent-green: #A8D5BA;
-  --warm-yellow: #F4D35E;
-  --earth-brown: #6B4226;
-  --light-bg: #F9F5EC;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@custom-variant dark (&:where(.dark, .dark *));
 
 *{
     font-family: "Poppins", sans-serif;

@@ -4,11 +4,11 @@ import { MdMenuOpen } from "react-icons/md";
 import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 import { GiFarmer } from "react-icons/gi";
-import Loader from './Loader';
 import { signOut } from 'firebase/auth';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import ThemeToggle from '../../Hooks/ThemeToggle';
 
 
 
@@ -18,8 +18,6 @@ import Swal from 'sweetalert2';
 const Navbar = () => {
     const { user } = use(AuthContext);
     const navigate = useNavigate();
-
-    // console.log("photo url ", user.photoURL)
 
     // if(loading && !user){
     //     return <Loader></Loader>
@@ -44,10 +42,10 @@ const Navbar = () => {
 
     return (
         <div className=''>
-            <div className="navbar bg-green-500 shadow-lg md:px-14 px-8">
+            <div className="navbar bg-green-500 dark:bg-green-500 shadow-lg md:px-14 px-8">
                 <div className="navbar-start">
                     <img src={logo} className='md:w-12 w-10 md:h-12 h-10 rounded-full' alt="" />
-                    <a className="font-semibold text-xl md:text-3xl text-white mx-2">GardenHub</a>
+                    <a className="font-semibold text-xl md:text-3xl text-white dark:text-black mx-2">GardenHub</a>
                 </div>
                 <div className="navbar-center  flex">
                     <NavLink to={'/'} className='text-xl font-medium text-amber-900 hover:bg-green-300
@@ -58,18 +56,23 @@ const Navbar = () => {
 
                     <NavLink to={'/sharetips'} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Share Tips </NavLink>
 
-                {
-                    user ? 
-                    <NavLink to={`/tips/mytips/${user?.email}`} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> My Tips </NavLink>: <p></p>
-                }
+                    {
+                        user ?
+                            <NavLink to={`/tips/mytips/${user?.email}`} className='text-xl font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> My Tips </NavLink> : <p></p>
+                    }
                 </div>
 
 
                 <div className="navbar-end">
                     {
                         user ? <button onClick={handleSignOut} className="btn md:inline-block hidden text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400">SignOut</button> :
-                                    <Link to={'/login'} className="btn md:inline-block hidden text-amber-900 mx-1 border-none bg-yellow-300 hover:bg-yellow-400">Login</Link>
+                            <Link to={'/login'} className="btn md:inline-block hidden text-amber-900 mx-1 border-none bg-yellow-300 hover:bg-yellow-400">Login</Link>
                     }
+
+                    <span className='mx-2 h-8'>
+                        {/* <DarkModeSwitch checked={theme === "dark"} onChange={toggle} size={25} /> */}
+                      <ThemeToggle></ThemeToggle>
+                    </span>
 
                     {
                         user ? <div> <img className='w-11 h-11 mx-1 rounded-full border-3 border-yellow-300 bg-white' src={user.photoURL} alt="" /></div> : <GiFarmer className='border-2 border-yellow-300 rounded-full' size={40} />
