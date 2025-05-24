@@ -21,8 +21,8 @@ const Signup = () => {
         const name = inputDatas.name;
         const photo = inputDatas.photo;
 
-        console.log("datatataata", name, email, photo);
-        console.log("datatataata", name, email, photo);
+        // console.log("datatataata", name, email, photo);
+        // console.log("datatataata", name, email, photo);
        
        
         // password validation
@@ -62,7 +62,7 @@ const Signup = () => {
             })
 
                 form.reset();
-                console.log('user is ', user);
+                // console.log('user is ', user);
                 Swal.fire({
                     position: "center",
                     icon: "success",
@@ -95,7 +95,7 @@ const Signup = () => {
                 }
 
                 setUser(user);
-                console.log('google user', user.email, user.displayName);
+                // console.log('google user', user.email, user.displayName);
                 Swal.fire({
                     position: "center",
                     icon: "success",

@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const UpdateTips = () => {
     const { user } = use(AuthContext);
     const data = useLoaderData();
-    console.log("updatae data", data)
+    // console.log("updatae data", data)
     const { _id, availability, category_level, description, images, level, plantType, title
     } = data;
 
@@ -18,7 +18,7 @@ const UpdateTips = () => {
         const form = e.target;
         const formData = new FormData(form);
         const updatedTips = Object.fromEntries(formData.entries(formData));
-        console.log("Updated tips is ", updatedTips);
+        // console.log("Updated tips is ", updatedTips);
 
         fetch(`http://localhost:3000/updatetips/${_id}`, {
             method: 'PUT',

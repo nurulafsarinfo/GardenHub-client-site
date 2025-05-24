@@ -22,11 +22,11 @@ const BrowseTips = () => {
             ? 'http://localhost:3000/sharedtips' 
             : `http://localhost:3000/sharedtips?difficulty=${difficulty}`
 
-            console.log('Fetching from: ', url)
+            // console.log('Fetching from: ', url)
             const response = await fetch(url);
             if (!response.ok) throw new Error('Network response was not ok')
             const data = await response.json();
-            console.log('dataa is ', data)
+            // console.log('dataa is ', data)
             setAllTips(data);
         } catch (error) {
             console.log("Error fetching tips:", error);
@@ -38,7 +38,7 @@ const BrowseTips = () => {
 
     const handleFilterChange = (e) => {
         const difficulty = e.target.value;
-        console.log("filterd difficulty value ", difficulty);
+        // console.log("filterd difficulty value ", difficulty);
         setSelectedDifficulty(difficulty);
         filteredTips(difficulty);
     }

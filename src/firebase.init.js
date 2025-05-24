@@ -4,12 +4,12 @@ import { getAuth } from "firebase/auth";
 
 //Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDGoad0pMIyGhWI9U9-WHptBq7i-p64KEc",
-  authDomain: "gardeners-user-auth.firebaseapp.com",
-  projectId: "gardeners-user-auth",
-  storageBucket: "gardeners-user-auth.firebasestorage.app",
-  messagingSenderId: "52963990061",
-  appId: "1:52963990061:web:0d5fa7637b14be836e36a4"
+  apiKey: import.meta.env.VITE_apiKey, 
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId, 
+  storageBucket: import.meta.env.VITE_storageBucket, 
+  messagingSenderId: import.meta.env.VITE_messagingSenderId, 
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

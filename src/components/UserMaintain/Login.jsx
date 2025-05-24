@@ -26,7 +26,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                console.log("after login ", user);
+                // console.log("after login ", user);
                 navigate(`${location.state ? location.state : '/'}`);
             })
             .catch(error => {
@@ -41,8 +41,8 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 const user = result.user;
-                console.log("google login user", user)
-                console.log("google login user name and email- ", user.email, user.displayName);
+                // console.log("google login user", user)
+                // console.log("google login user name and email- ", user.email, user.displayName);
 
                 if (!user) {
                     toast.error('LogIn Failed. No user return from Google')
@@ -50,7 +50,7 @@ const Login = () => {
                 }
 
                 setUser(user);
-                console.log('google user', user.email, user.displayName);
+                // console.log('google user', user.email, user.displayName);
                 Swal.fire({
                     position: "center",
                     icon: "success",

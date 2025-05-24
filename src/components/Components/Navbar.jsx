@@ -5,7 +5,7 @@ import { Link, NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 import { GiFarmer } from "react-icons/gi";
 import { signOut } from 'firebase/auth';
-import auth from '../../../firebase.init';
+import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import ThemeToggle from '../../Hooks/ThemeToggle';

@@ -5,7 +5,7 @@ import { FcLike } from "react-icons/fc";
 
 const TipsDetails = () => {
     const data = useLoaderData();
-    console.log("daata is", data);
+    // console.log("daata is", data);
     const { _id, name, email, title, plantType, level, category_level, description, totalLiked = 0 } = data;
 
     const [likes, setLikes] = useState(totalLiked)

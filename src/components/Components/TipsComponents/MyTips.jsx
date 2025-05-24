@@ -11,10 +11,10 @@ import emptyList from '../../../assets/empty-list.json';
 const MyTips = () => {
     const allTips = useLoaderData();
     const [mytips, setMytips] = useState(allTips)
-    console.log("my tips-", mytips);
+    // console.log("my tips-", mytips);
 
     const handleDeleteTips = (id) => {
-        console.log(id);
+        // console.log(id);
 
         Swal.fire({
             title: "Are you sure?",
@@ -31,7 +31,7 @@ const MyTips = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log("after delete", data)
+                        // console.log("after delete", data)
                         if (data.deletedCount) {
                             Swal.fire({
                                 title: "Deleted!",
