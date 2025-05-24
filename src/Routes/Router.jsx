@@ -46,6 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/explorgardeners',
+                 hydrateFallbackElement: <Loader></Loader>,
                 loader: () => fetch('http://localhost:3000/gardeners'),
                 element: <AllGardeners></AllGardeners>
             }
@@ -76,6 +77,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/tips/mytips/:email",
+                 hydrateFallbackElement: <Loader></Loader>,
                 loader: ({params}) => fetch(`http://localhost:3000/mytips/${params?.email}`),
                 element: <PrivateRoute>
                             <MyTips></MyTips>
@@ -83,6 +85,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/tips/updatetips/:id",
+                 hydrateFallbackElement: <Loader></Loader>,
                 loader: ({params}) => fetch(`http://localhost:3000/sharedtips/${params.id}`),
                 element: <PrivateRoute>
                            <UpdateTips></UpdateTips>

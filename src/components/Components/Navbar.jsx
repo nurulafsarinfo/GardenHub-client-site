@@ -12,9 +12,6 @@ import ThemeToggle from '../../Hooks/ThemeToggle';
 
 
 
-
-
-
 const Navbar = () => {
     const { user } = use(AuthContext);
     const navigate = useNavigate();
@@ -45,7 +42,7 @@ const Navbar = () => {
             <div className="navbar bg-green-500 dark:bg-green-500 shadow-lg md:px-14 px-8">
                 <div className="navbar-start">
                     <img src={logo} className='md:w-12 w-10 md:h-12 h-10 rounded-full' alt="" />
-                    <a className="font-semibold text-xl md:text-3xl text-white dark:text-black mx-2">GardenHub</a>
+                    <a className="font-semibold text-xl md:text-3xl text-white dark:text-slate-700 mx-2">GardenHub</a>
                 </div>
                 <div className="navbar-center  flex">
                     <NavLink to={'/'} className='text-xl font-medium text-amber-900 hover:bg-green-300
@@ -66,16 +63,30 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? <button onClick={handleSignOut} className="btn md:inline-block hidden text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400">SignOut</button> :
-                            <Link to={'/login'} className="btn md:inline-block hidden text-amber-900 mx-1 border-none bg-yellow-300 hover:bg-yellow-400">Login</Link>
+                            <Link to={'/login'} className="btn md:inline-block hidden py-2 text-amber-900 mx-1 border-none bg-yellow-300 hover:bg-yellow-400">Login</Link>
                     }
 
                     <span className='mx-2 h-8'>
                         {/* <DarkModeSwitch checked={theme === "dark"} onChange={toggle} size={25} /> */}
-                      <ThemeToggle></ThemeToggle>
+                        <ThemeToggle></ThemeToggle>
                     </span>
 
                     {
-                        user ? <div> <img className='w-11 h-11 mx-1 rounded-full border-3 border-yellow-300 bg-white' src={user.photoURL} alt="" /></div> : <GiFarmer className='border-2 border-yellow-300 rounded-full' size={40} />
+                        user ?
+                            <div className='dropdown dropdown-end'>
+                                <div tabIndex={0} role='button'>
+                                    <div className='tooltip tooltip-info tooltip-bottom' data-tip={user.displayName}>
+                                        <img className='w-11 h-11 mx-1 rounded-full border-3 border-yellow-300 bg-white' src={user.photoURL} alt="" />
+                                    </div>
+                                </div>
+                                <ul tabIndex={0} className='z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-40'>
+                                    <li>
+                                        <button onClick={handleSignOut} className="btn text-amber-900 border-none bg-yellow-300 hover:bg-yellow-400 text-lg">SignOut</button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            : <div className='tooltip tooltip-bottom' data-tip="Guest User"> <GiFarmer className='border-2 border-yellow-300 rounded-full' size={40} /></div>
                     }
 
 

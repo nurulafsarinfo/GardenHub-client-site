@@ -6,7 +6,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
-        <div className='bg-amber-100 text-green-900 py-6 w-full '>
+        <div className='dark:bg-gray-500 bg-amber-100 text-green-900 py-6 w-full '>
             <div className='text-green-900 md:p-18 p-10'>
                 <div className='md:flex md:flex-row flex-col gap-5 justify-between'>
                     <div>
@@ -19,20 +19,20 @@ const Footer = () => {
                         </button>
 
                         <p className='mt-4 mb-1'>Or Email Us At</p>
-                        <button className="flex items-center gap-2 bg-slate-300 text-gray-500 font-semibold py-2 px-4 rounded-full hover:bg-gray-400 hover:text-gray-200 transition">
+                        <span className="flex items-center gap-2 bg-slate-300 text-gray-500 font-semibold w-200px py-2 px-4 rounded-full hover:bg-gray-400 hover:text-gray-200 transition">
                             mdnurulafsar123afsar@gmail.com <FaRegCopy className='' />
-                        </button>
+                        </span>
 
                     </div>
 
                     <div className='my-8'>
                         <p className='md:text-2xl text-xl font-medium mb-3'>Terms & Conditions</p>
-                        <ul className='md:text-lg text-sm'>
-                            <li>User Accounts & Security</li>
-                            <li>Use of Services</li>
-                            <li>Prohibited Conduct</li>
-                            <li>Intellectual Property</li>
-                            <li>Limitation of Liability</li>
+                        <ul className=' text-sm'>
+                            <li className='hover:underline'>Use of Services</li>
+                            <li className='hover:underline'>Prohibited Conduct</li>
+                            <li className='hover:underline'>Intellectual Property</li>
+                            <li className='hover:underline'>Limitation of Liability</li>
+                            <li className='hover:underline'>User Accounts & Security</li>
                         </ul>
                     </div>
 

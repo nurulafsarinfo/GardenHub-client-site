@@ -4,6 +4,7 @@ import Footer from '../Components/Footer';
 import { Outlet } from 'react-router';
 import Banner from '../Components/Banner';
 import { ToastContainer } from 'react-toastify';
+import Slider3D from '../SwiperSliderSection/Slider3D';
 
 const HomeLayouts = () => {
     return (
@@ -12,8 +13,10 @@ const HomeLayouts = () => {
             <nav>
                 <Navbar></Navbar>
             </nav>
-            <header>
+
+            <header className='w-11/12 mx-auto'>
                 {/* <Banner></Banner> */}
+                <Slider3D></Slider3D>
             </header>
             <main>
                 <Outlet></Outlet>
