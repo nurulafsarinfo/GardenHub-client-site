@@ -5,7 +5,7 @@ import { Outlet } from 'react-router';
 
 const TipsPageLayout = () => {
     return (
-        <div>
+        <div className='dark:bg-gray-900'>
             <header>
                 <nav>
                     <Navbar></Navbar>

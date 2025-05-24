@@ -37,7 +37,7 @@ const router = createBrowserRouter([
                 element: <Signup></Signup>
             },
             {
-                
+
                 path: '/sharetips',
                 element: <PrivateRoute>
                     <FormGardenTips></FormGardenTips>
@@ -45,8 +45,8 @@ const router = createBrowserRouter([
 
             },
             {
-                path:'/explorgardeners',
-                 hydrateFallbackElement: <Loader></Loader>,
+                path: '/explorgardeners',
+                hydrateFallbackElement: <Loader></Loader>,
                 loader: () => fetch('http://localhost:3000/gardeners'),
                 element: <AllGardeners></AllGardeners>
             }
@@ -56,40 +56,41 @@ const router = createBrowserRouter([
     {
         path: '/tips',
         element: <PrivateRoute>
-                    <TipsPageLayout></TipsPageLayout>
-                </PrivateRoute>,
+            <TipsPageLayout></TipsPageLayout>
+        </PrivateRoute>,
         children: [
             {    // get all tips 
                 path: '/tips/browsetips',
                 loader: () => fetch('http://localhost:3000/sharedtips/all'),
                 hydrateFallbackElement: <Loader></Loader>,
                 element: <PrivateRoute>
-                            <BrowseTips></BrowseTips>
-                         </PrivateRoute> 
+                    <BrowseTips></BrowseTips>
+                </PrivateRoute>
+
             },
             {
                 path: '/tips/details/:id',
-                loader: ({params}) => fetch(`http://localhost:3000/sharedtips/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:3000/sharedtips/${params.id}`),
                 hydrateFallbackElement: <Loader></Loader>,
                 element: <PrivateRoute>
-                             <TipsDetails></TipsDetails>
-                         </PrivateRoute>
+                    <TipsDetails></TipsDetails>
+                </PrivateRoute>
             },
             {
                 path: "/tips/mytips/:email",
-                 hydrateFallbackElement: <Loader></Loader>,
-                loader: ({params}) => fetch(`http://localhost:3000/mytips/${params?.email}`),
+                hydrateFallbackElement: <Loader></Loader>,
+                loader: ({ params }) => fetch(`http://localhost:3000/mytips/${params?.email}`),
                 element: <PrivateRoute>
-                            <MyTips></MyTips>
-                         </PrivateRoute>
+                    <MyTips></MyTips>
+                </PrivateRoute>
             },
             {
                 path: "/tips/updatetips/:id",
-                 hydrateFallbackElement: <Loader></Loader>,
-                loader: ({params}) => fetch(`http://localhost:3000/sharedtips/${params.id}`),
+                hydrateFallbackElement: <Loader></Loader>,
+                loader: ({ params }) => fetch(`http://localhost:3000/sharedtips/${params.id}`),
                 element: <PrivateRoute>
-                           <UpdateTips></UpdateTips>
-                         </PrivateRoute>
+                    <UpdateTips></UpdateTips>
+                </PrivateRoute>
             }
         ]
     },

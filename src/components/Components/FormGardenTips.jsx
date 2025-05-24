@@ -12,14 +12,6 @@ const FormGardenTips = () => {
         const form = e.target;
         const formData = new FormData(form);
         const tipsData = Object.fromEntries(formData.entries());
-        console.log(tipsData);
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Successfully shared your tips.",
-            showConfirmButton: false,
-            timer: 2000
-        });
 
         fetch('http://localhost:3000/sharedtips', {
             method: 'POST',
@@ -31,14 +23,15 @@ const FormGardenTips = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    Swal.fire({
-                        title: "Tips added successfully!",
-                        icon: "success",
-                        draggable: true,
-                        timer: 2000,
-                        showConfirmButton: false
-                    });
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Tips added Successfully! Check 'My Tips' section.",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
                 }
+                form.reset()
             })
             .catch(err => console.log(err))
 

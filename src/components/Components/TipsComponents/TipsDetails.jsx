@@ -25,9 +25,9 @@ const TipsDetails = () => {
     };
 
     return (
-        <div className='w-11/12 mx-auto h-[100vh] mt-5 mb-50 bg-base-100 relative'>
+        <div className='w-11/12 mx-auto h-[100vh] mt-5 mb-50  relative'>
             <div>
-                <div className=' relative min-w-sm lg:h-[510px] md:h-[450px] h-[350px] border-2 border-amber-900 bg-base-200 rounded-2xl p-3'>
+                <div className=' relative min-w-sm lg:h-[510px] md:h-[450px] h-[350px] border-2 border-amber-900 bg-base-200 dark:bg-gray-300 rounded-2xl p-3'>
                     <img className='lg:h-80 md:h-60 h-40 lg:min-w-100 md:min-w-80 max-w-60 absolute left-1/12 top-20 z-999 border-red-500 bg-amber-200 border-2 shadow-2xl drop-shadow-xl' src={data.images} alt="" />
                     <img className=' lg:h-80 md:h-60 h-40 border-2 shadow-xl drop-shadow-2xl z-888  border-green-500 absolute top-7 lg:right-5/12 md:right-4/12 right-3/12' src="https://i.postimg.cc/PxcY5bPh/tree-plant.jpg" alt="" />
 
@@ -39,7 +39,7 @@ const TipsDetails = () => {
                     <h1 className='italic md:text-2xl text-lg font-medium absolute bottom-3 text-amber-900'>"{title}"</h1>
                 </div>
 
-                <div className=' my-5 px-10 space-y-2'>
+                <div className=' my-5 px-10 space-y-2 dark:text-base-200'>
                     <h1 className='italic underline'>Tips shared by- <b>
                         <i>"{name}</i>" </b></h1>
                     <div className='flex justify-between '>

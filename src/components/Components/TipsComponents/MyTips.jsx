@@ -3,6 +3,8 @@ import { Link, useLoaderData } from 'react-router';
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { RiEdit2Fill } from "react-icons/ri";
 import Swal from 'sweetalert2';
+import Lottie from 'lottie-react';
+import emptyList from '../../../assets/empty-list.json';
 
 
 
@@ -33,7 +35,7 @@ const MyTips = () => {
                         if (data.deletedCount) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your Coffee has been deleted.",
+                                text: "Your shared tip has been deleted.",
                                 icon: "success"
                             });
 
@@ -50,14 +52,21 @@ const MyTips = () => {
     return (
         <div>
             <div>
-                <div className="overflow-x-auto my-10 mx-20">
+                {
+                    mytips.length === 0 ?
+                     <div className='w-full h-[80vh]'> 
+                        <Lottie animationData={emptyList} loop={true} className='w-full h-full' />
+                     </div>
+                     
+                        :  <div className="overflow-x-auto my-10 mx-20">
                     <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
                         <thead className="bg-yellow-300 text-amber-900 text-left text-sm">
                             <tr>
-                                <th className="px-4 py-3">Image</th>
-                                <th className="px-4 py-3">Title</th>
-                                <th className="px-4 py-3">Category</th>
-                                <th className="px-4 py-3">Action</th>
+                                <th className="px-4 py-3 text-center">Image</th>
+                                <th className="px-4 py-3 text-center">Title</th>
+                                <th className="px-4 py-3 text-center">Category</th>
+                                <th className='px-3 py-3 text-center '>Total Like</th>
+                                <th className="px-4 py-3 text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody className="text-gray-700">
@@ -66,17 +75,18 @@ const MyTips = () => {
                                 mytips.map(tipsrow => {
                                     return (
                                         <tr key={tipsrow._id} className="border-b border-b-yellow-300">
-                                            <td className="px-4 py-3">
+                                            <td className="px-4 py-3 text-center">
                                                 <img
                                                     src={tipsrow.images}
                                                     alt="Plant 2"
                                                     className="w-16 h-16 object-cover rounded-md"
                                                 />
                                             </td>
-                                            <td className="px-4 py-3">{tipsrow.title}</td>
-                                            <td className="px-4 py-3">{tipsrow.category_level
+                                            <td className="px-4 py-3 text-center">{tipsrow.title}</td>
+                                            <td className="px-4 py-3 text-center">{tipsrow.category_level
                                             }</td>
-                                            <td className="px-4 py-3 space-x-1">
+                                            <td className='text-center font-medium'>{tipsrow.totalLiked}</td>
+                                            <td className="px-4 py-3 text-center space-x-1">
                                                 <Link
                                                     to={`/tips/updatetips/${tipsrow._id}`}
                                                     className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-md"
@@ -97,6 +107,7 @@ const MyTips = () => {
                         </tbody>
                     </table>
                 </div>
+}
             </div>
         </div>
     );

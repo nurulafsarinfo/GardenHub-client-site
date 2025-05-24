@@ -21,8 +21,8 @@ const SubscriptionPage = () => {
     return (
         <div className="border-5 border-gray-600 rounded-xl md:p-8 p-10">
             <div>
-                <h1 className={`text-3xl font-bold text-center my-3 `}>Subscription Plans</h1>
-                <p className={`text-center text-lg font-semibold`}>Upgrade to access, User Roles and Permissions, All Private Tips and Standard Gardeners support.</p>
+                <h1 className={`text-3xl font-bold dark:text-base-200 text-center my-3 `}>Subscription Plans</h1>
+                <p className={`text-center dark:text-base-100 text-lg font-semibold`}>Upgrade to access, User Roles and Permissions, All Private Tips and Standard Gardeners support.</p>
             </div>
 
 
@@ -34,7 +34,7 @@ const SubscriptionPage = () => {
                         onClick={() => handleSelecedPlane("basic")}
                         className={`cursor-pointer min-w-sm md:w-[100px] borde-2 border-gray-400 p-10 border rounded-2xl ${selectedPlan === "basic" ? "bg-green-100" : "bg-gray-200"}`}>
 
-                        <span className={`text-xl font-semibold  px-8  border rounded-full py-1 ${selectedPlan === "basic" ? "border-green-600 text-green-600" : 'text-gray-600'}`}>Basic111</span>
+                        <span className={`text-xl font-semibold  px-8  border rounded-full py-1 ${selectedPlan === "basic" ? "border-green-600 text-green-600" : 'text-gray-600'}`}>Basic</span>
                         <div className={`flex items-end gap-3 my-10 ${selectedPlan === "basic" ? "text-green-700" : "text-gray-600"}`}>
                             <div className="flex items-start gap-1">
                                 <span className="text-xl font-semibold mt-1">tk</span>

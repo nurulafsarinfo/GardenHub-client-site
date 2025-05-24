@@ -48,11 +48,11 @@ const BrowseTips = () => {
         <div>
             <div className="overflow-x-auto my-10 mx-20">
                 <div className='my-5'>
-                    <label className='mr-3 text-amber-900'>Filter by Difficulty Level:</label>
+                    <label className='mr-3 text-amber-900 dark:text-base-200'>Filter by Difficulty Level:</label>
                     <select
                         value={selectedDifficulty}
                         onChange={handleFilterChange}
-                        className='border border-amber-900 text-amber-900 px-2 py-1  rounded-md' >
+                        className='border border-amber-900 dark:border-gray-300 text-amber-900 dark:text-gray-400 px-2 py-1  rounded-md' >
                         <option value="All">All</option>
                         <option value="easy">Easy</option>
                         <option value="medium">Medium</option>
@@ -62,13 +62,14 @@ const BrowseTips = () => {
 
                 {loading ?
                     <Loader></Loader> :
-                    <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-                        <thead className="bg-green-500 text-amber-900 text-left text-sm">
+                    <table className="min-w-full  bg-white shadow-md rounded-lg overflow-hidden">
+                        <thead className="bg-green-500 text-amber-900 text-left text-sm ">
                             <tr>
-                                <th className="px-4 py-3">Image</th>
-                                <th className="px-4 py-3">Title</th>
-                                <th className="px-4 py-3">Category</th>
-                                <th className="px-4 py-3">Action</th>
+                                <th className="px-8 py-3 text-center">Image</th>
+                                <th className="px-4 py-3 text-center">Title</th>
+                                <th className="px-4 py-3 text-center">Category</th>
+                                <th className="px-4 py-3 text-center">Level</th>
+                                <th className="px-4 py-3 text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody className="text-gray-700">
@@ -77,17 +78,18 @@ const BrowseTips = () => {
                                 alltips.map(tipsrow => {
                                     return (
                                         <tr key={tipsrow._id} className="border-b border-b-amber-800">
-                                            <td className="px-4 py-3">
+                                            <td className="px-7 py-3 text-center">
                                                 <img
                                                     src={tipsrow.images}
                                                     alt="Plant 2"
                                                     className="w-16 h-16 object-cover rounded-md"
                                                 />
                                             </td>
-                                            <td className="px-4 py-3">{tipsrow.title}</td>
-                                            <td className="px-4 py-3">{tipsrow.category_level
+                                            <td className="px-4 py-3 ">{tipsrow.title}</td>
+                                            <td className="px-4 py-3 text-center">{tipsrow.category_level
                                             }</td>
-                                            <td className="px-4 py-3">
+                                            <td className='text-center'>{tipsrow.level}</td>
+                                            <td className="px-4 py-3 text-center">
                                                 <Link to={`/tips/details/${tipsrow._id}`} className="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-md text-sm">
                                                     See More
                                                 </Link>

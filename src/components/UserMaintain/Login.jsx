@@ -27,7 +27,7 @@ const Login = () => {
                     timer: 1500
                 });
                 console.log("after login ", user);
-                navigate(`${location.state ? location.state : '/'}`)
+                navigate(`${location.state ? location.state : '/'}`);
             })
             .catch(error => {
                 console.log('login error- ', error.message);

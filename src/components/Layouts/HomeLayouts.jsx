@@ -10,13 +10,10 @@ const HomeLayouts = () => {
     return (
         <div className='dark:bg-gray-900 '>
 
-            <nav>
-                <Navbar></Navbar>
-            </nav>
-
-            <header className='w-11/12 mx-auto'>
-                {/* <Banner></Banner> */}
-                <Slider3D></Slider3D>
+            <header>
+                <nav>
+                    <Navbar></Navbar>
+                </nav>
             </header>
             <main>
                 <Outlet></Outlet>
@@ -24,6 +21,8 @@ const HomeLayouts = () => {
             <footer>
                 <Footer></Footer>
             </footer>
+
+
             <ToastContainer position="top-right" autoClose={5000}
                 closeOnClick={true}
                 pauseOnHover={true}

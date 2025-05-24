@@ -46,6 +46,7 @@ const UpdateTips = () => {
                         showConfirmButton: false
                     })
                 }
+   
             })
             .catch(err => console.log(err.message));
     }

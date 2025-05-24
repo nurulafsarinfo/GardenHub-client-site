@@ -29,15 +29,20 @@ const Signup = () => {
         setError('');
         if (!/(?=.*[a-z])/.test(password)) {
             setError('* Add at least one small letter to your password!');
+            toast.error('* Add at least one small letter to your password!');
             return;
         } else if (!/(?=.*[A-Z])/.test(password)) {
             setError('* Add at least one capital letter to your password!');
+            toast.error('* Add at least one capital letter to your password!')
             return;
         } else if (!/(?=.*[@$%&*!?])/.test(password)) {
             setError('* Please add at least one special symbol to your password.');
+            toast.error('* Please add at least one special symbol to your password.')
             return;
         } else if (password.length < 8) {
-            setError('* Password must be at least 8 character long.')
+            setError('* Password must be at least 8 character long.');
+            toast.error('* Password must be at least 8 character long.')
+            return;
         } else {
             setError('');
         }
@@ -47,6 +52,7 @@ const Signup = () => {
             .then(result => {
                 const user = result.user;
 
+            // update user profile 
             updateUserProfile({ displayName: name, photoURL: photo})
             .then(() => {
                 setUser({...user, displayName: name, photoURL: photo});
@@ -64,14 +70,14 @@ const Signup = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigate(`${location.state ? location.state : '/'}`)
+                navigate(`${location.state ? location.state : '/'}`);
             })
             .catch((error) => {
                 console.log(error.message);
                 toast.error(error.message);
             })
 
-            // update user profile 
+       
 
 
     }
@@ -97,7 +103,7 @@ const Signup = () => {
                     showConfirmButton: false,
                     timer: 2000
                 });
-                navigate(location.state?.from?.pathname || '/')
+                 navigate(`${location.state ? location.state : '/'}`)
             })
             .catch(error => {
                 console.log(error.message);
