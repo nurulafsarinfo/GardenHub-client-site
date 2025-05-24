@@ -20,7 +20,7 @@ const UpdateTips = () => {
         const updatedTips = Object.fromEntries(formData.entries(formData));
         // console.log("Updated tips is ", updatedTips);
 
-        fetch(`http://localhost:3000/updatetips/${_id}`, {
+        fetch(`https://garden-hub-server-site.vercel.app/updatetips/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -46,7 +46,7 @@ const UpdateTips = () => {
                         showConfirmButton: false
                     })
                 }
-   
+
             })
             .catch(err => console.log(err.message));
     }

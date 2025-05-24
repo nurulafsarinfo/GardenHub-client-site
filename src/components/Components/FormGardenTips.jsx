@@ -13,23 +13,23 @@ const FormGardenTips = () => {
         const formData = new FormData(form);
         const tipsData = Object.fromEntries(formData.entries());
 
-        fetch('http://localhost:3000/sharedtips', {
+        fetch('https://garden-hub-server-site.vercel.app/sharedtips', {
             method: 'POST',
             headers: {
-                'content-type':'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(tipsData)
         })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                Swal.fire({
-                    position: "center",
-                    icon: "success",
-                    title: "Tips added Successfully! Check 'My Tips' section.",
-                    showConfirmButton: false,
-                    timer: 2000
-                });
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Tips added Successfully! Check 'My Tips' section.",
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
                 }
                 form.reset()
             })

@@ -12,7 +12,7 @@ const TipsDetails = () => {
 
     const handleCount = async () => {
         try {
-            const res = await fetch(`http://localhost:3000/sharedtips/${_id}/like`, {
+            const res = await fetch(`https://garden-hub-server-site.vercel.app/sharedtips/${_id}/like`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
             });

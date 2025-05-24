@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                loader: () => fetch('http://localhost:3000/gardeners'),
+                loader: () => fetch('https://garden-hub-server-site.vercel.app/gardeners/active'),
                 hydrateFallbackElement: <Loader></Loader>,
                 element: <Home></Home>
             },
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
             {
                 path: '/explorgardeners',
                 hydrateFallbackElement: <Loader></Loader>,
-                loader: () => fetch('http://localhost:3000/gardeners'),
+                loader: () => fetch('https://garden-hub-server-site.vercel.app/gardeners'),
                 element: <AllGardeners></AllGardeners>
             }
 
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         children: [
             {    // get all tips 
                 path: '/tips/browsetips',
-                loader: () => fetch('http://localhost:3000/sharedtips/all'),
+                loader: () => fetch('https://garden-hub-server-site.vercel.app/sharedtips/all'),
                 hydrateFallbackElement: <Loader></Loader>,
                 element: <PrivateRoute>
                     <BrowseTips></BrowseTips>
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/tips/details/:id',
-                loader: ({ params }) => fetch(`http://localhost:3000/sharedtips/${params.id}`),
+                loader: ({ params }) => fetch(`https://garden-hub-server-site.vercel.app/sharedtips/${params.id}`),
                 hydrateFallbackElement: <Loader></Loader>,
                 element: <PrivateRoute>
                     <TipsDetails></TipsDetails>
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
             {
                 path: "/tips/mytips/:email",
                 hydrateFallbackElement: <Loader></Loader>,
-                loader: ({ params }) => fetch(`http://localhost:3000/mytips/${params?.email}`),
+                loader: ({ params }) => fetch(`https://garden-hub-server-site.vercel.app/mytips/${params?.email}`),
                 element: <PrivateRoute>
                     <MyTips></MyTips>
                 </PrivateRoute>
@@ -87,7 +87,7 @@ const router = createBrowserRouter([
             {
                 path: "/tips/updatetips/:id",
                 hydrateFallbackElement: <Loader></Loader>,
-                loader: ({ params }) => fetch(`http://localhost:3000/sharedtips/${params.id}`),
+                loader: ({ params }) => fetch(`https://garden-hub-server-site.vercel.app/sharedtips/${params.id}`),
                 element: <PrivateRoute>
                     <UpdateTips></UpdateTips>
                 </PrivateRoute>

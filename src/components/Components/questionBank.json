@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Which part of the plant conducts photosynthesis?",
+    "options": ["Root", "Stem", "Leaf", "Flower"],
+    "correctAnswer": "Leaf"
+  },
+  {
+    "question": "What is the best time to water plants?",
+    "options": ["Morning", "Afternoon", "Evening", "Midnight"],
+    "correctAnswer": "Morning"
+  },
+  {
+    "question": "What part of the plant absorbs water and nutrients?",
+    "options": ["Leaves", "Roots", "Stem", "Flower"],
+    "correctAnswer": "Roots"
+  },
+  {
+    "question": "Which of these is a natural pesticide?",
+    "options": ["Neem oil", "Chemical spray", "Fertilizer", "Water"],
+    "correctAnswer": "Neem oil"
+  },
+  {
+    "question": "What is grafting in gardening?",
+    "options": [
+      "Planting seeds",
+      "Cutting stems",
+      "Joining two plants together",
+      "Watering plants"
+    ],
+    "correctAnswer": "Joining two plants together"
+  },
+  {
+    "question": "Which of these plants is a succulent?",
+    "options": ["Cactus", "Fern", "Rose", "Tulip"],
+    "correctAnswer": "Cactus"
+  },
+  {
+    "question": "How do plants mainly reproduce?",
+    "options": ["By seeds", "By roots", "By leaves", "By flowers"],
+    "correctAnswer": "By seeds"
+  }
+]

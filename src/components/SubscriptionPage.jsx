@@ -22,13 +22,13 @@ const SubscriptionPage = () => {
         <div className="border-5 border-gray-600 rounded-xl md:p-8 p-10">
             <div>
                 <h1 className={`text-3xl font-bold dark:text-base-200 text-center my-3 `}>Subscription Plans</h1>
-                <p className={`text-center dark:text-base-100 text-lg font-semibold`}>Upgrade to access, User Roles and Permissions, All Private Tips and Standard Gardeners support.</p>
+                <p className={`text-center dark:text-gray-500 text-lg font-semibold`}>Upgrade to access, User Roles and Permissions, All Private <br /> Tips and Standard Gardeners support.</p>
             </div>
 
 
             <div>
                 <div></div>
-                <div className="grid md:grid-cols-3 gap-5 my-10">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2  gap-5 my-10">
 
                     <div
                         onClick={() => handleSelecedPlane("basic")}

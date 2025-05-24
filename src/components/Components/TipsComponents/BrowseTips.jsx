@@ -13,14 +13,14 @@ const BrowseTips = () => {
     const filteredTips = async (difficulty) => {
 
         try {
-            // let url = 'http://localhost:3000/sharedtips';
+            // let url = 'https://garden-hub-server-site.vercel.app/sharedtips';
             // if (difficulty && difficulty !== 'All') {
             //     url += `?difficulty=${difficulty}`;
             // }
 
-            const url = difficulty === 'All' 
-            ? 'http://localhost:3000/sharedtips' 
-            : `http://localhost:3000/sharedtips?difficulty=${difficulty}`
+            const url = difficulty === 'All'
+                ? 'https://garden-hub-server-site.vercel.app/sharedtips'
+                : `https://garden-hub-server-site.vercel.app/sharedtips?difficulty=${difficulty}`
 
             // console.log('Fetching from: ', url)
             const response = await fetch(url);
