@@ -1,6 +1,6 @@
 # Garden Hub
 
-[Live Site URL](YOUR_LIVE_SITE_URL_HERE)
+[Live Site URL](https://gardeners-user-auth.web.app/)
 
 ---
 
