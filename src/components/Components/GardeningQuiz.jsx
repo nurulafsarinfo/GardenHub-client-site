@@ -112,7 +112,7 @@ const GardeningQuiz = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto min-w-sm mt-10 p-6 bg-white shadow-lg rounded-xl">
+    <div className="max-w-xl mx-auto  mt-10 p-6 bg-white shadow-lg rounded-xl">
       <h2 className="text-2xl font-bold text-center text-green-700 mb-4">
         💡Test Your Gardening Knowledge💥
       </h2>

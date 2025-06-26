@@ -46,7 +46,7 @@ const BrowseTips = () => {
 
     return (
         <div>
-            <div className="overflow-x-auto my-10 mx-20">
+            <div className="overflow-x-auto my-5 md:my-10 mx-8 md:mx-20">
                 <div className='my-5'>
                     <label className='mr-3 text-amber-900 dark:text-base-200'>Filter by Difficulty Level:</label>
                     <select
@@ -90,7 +90,7 @@ const BrowseTips = () => {
                                             }</td>
                                             <td className='text-center'>{tipsrow.level}</td>
                                             <td className="px-4 py-3 text-center">
-                                                <Link to={`/tips/details/${tipsrow._id}`} className="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded-md text-sm">
+                                                <Link to={`/tips/details/${tipsrow._id}`} className=" btn bg-green-500 hover:bg-green-600 text-white text-[10px] px-4 py-1 rounded-md md:text-sm">
                                                     See More
                                                 </Link>
                                             </td>

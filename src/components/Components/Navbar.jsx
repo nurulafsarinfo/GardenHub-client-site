@@ -38,8 +38,9 @@ const Navbar = () => {
     }
 
     return (
-        <div className=''>
-            <div className="navbar bg-green-500 dark:bg-green-500 shadow-lg md:px-14 px-8">
+
+            <div className="navbar  bg-green-500 dark:bg-green-500 shadow-lg md:px-14 px-8">
+                
                 <div className="navbar-start">
                     <img src={logo} className='md:w-12 w-10 md:h-12 h-10 rounded-full' alt="" />
                     <a className="font-semibold text-xl md:text-3xl text-white dark:text-slate-700 mx-2">GardenHub</a>
@@ -75,9 +76,11 @@ const Navbar = () => {
                         user ?
                             <div className='dropdown dropdown-end'>
                                 <div tabIndex={0} role='button'>
+
                                     <div className='tooltip tooltip-info tooltip-bottom' data-tip={user.displayName}>
                                         <img className='w-11 h-11 mx-1 rounded-full border-3 border-yellow-300 bg-white' src={user.photoURL} alt="" />
                                     </div>
+                                    
                                 </div>
                                 <ul tabIndex={0} className='z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-40'>
                                     <li>
@@ -122,7 +125,6 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

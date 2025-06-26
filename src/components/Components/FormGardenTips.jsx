@@ -39,84 +39,90 @@ const FormGardenTips = () => {
 
     }
     return (
-        <div>
-            <div className='shadow-2xl border-3 border-gray-200 rounded-2xl md:w-[500px] w-[400px] mx-auto my-10  p-10 bg-green-100 '>
+        <div className='md:mx-20 mx-5'>
+            <div className='shadow-2xl border-3 border-gray-200 rounded-2xl   mx-auto my-10  p-10 bg-green-100 '>
                 <form onSubmit={handleTipsForm}>
 
-                    <label className='label md:text-2xl text-xl text-amber-900'>Title </label>
-                    <br />
-                    <input type="text" name="title" placeholder='(e.g., “How I Grow Tomatoes Indoors”)
-                    ' className='border-2 bg-slate-100 text-amber-900 md:text-lg text-sm p-2 rounded-2xl my-2 w-full ' required />
-                    <br />
-
-                    <label className='label md:text-2xl text-xl text-amber-900'>Plant Type/Topic</label>
-                    <br />
-                    <input type="text" name="plantType" placeholder='Enter your Plant type.' className='border-2 bg-slate-100 text-amber-900 md:text-lg text-sm p-2 rounded-2xl my-2 w-full' required />
-
-                    <br />
-
-
-                    <label className='label md:text-2xl text-xl text-amber-900'>Difficulty Level</label>
-                    <br />
-                    <select name="level" className='border-2 bg-slate-100 text-amber-900 md:text-lg text-sm p-2 rounded-2xl my-2 w-full'>
-                        <option disabled selected hidden>Select one... </option>
-                        <option value="easy">Easy</option>
-                        <option value="medium">Medium</option>
-                        <option value="hard">Hard</option>
-                    </select>
-
-                    <br />
-
-
-
-                    <label className='label md:text-2xl text-xl text-amber-900'>Images URL</label>
-                    <br />
-                    <input type="url" name="images" placeholder='https://example.com/image.jpg' className='border-2 bg-slate-100 text-amber-900 md:text-lg text-sm p-2 rounded-2xl my-2 w-full' required />
-
-
-
-
-                    <label className='label md:text-2xl text-xl text-amber-900'>Category </label>
-                    <br />
-                    <select name="category_level" className='border-2 bg-slate-100 text-amber-900 md:text-lg text-sm p-2 rounded-2xl my-2 w-full'>
-                        <option disabled selected hidden>Select one...</option>
-                        <option value="composting">Composting</option>
-                        <option value="plant-care">Plant Care</option>
-                        <option value="vertical-gardening">Vertical Gardening</option>
-                        <option value="hydroponics">Hydroponics</option>
-                        <option value="indoor-plants">Indoor Plants</option>
-                    </select>
-
-                    <br />
-
-
-                    <label className='label md:text-2xl text-xl text-amber-900'>Availability </label>
-                    <br />
-                    <select name="availability" className='border-2 bg-slate-100 text-amber-900 md:text-lg text-sm p-2 rounded-2xl my-2 w-full'>
-                        <option disabled selected hidden>Select a category...</option>
-                        <option value="public">Public</option>
-                        <option value="hidden">Hidden</option>
-                    </select>
-
-                    <div className='flex gap-3'>
-                        <div className='w-full'>
-                            <label className='label md:text-2xl text-xl text-amber-900'>Name</label>
+                    <div className='grid grid-cols-2 gap-5 md:gap-10'>
+                        <div>
+                            <label className='label md:text-2xl  text-amber-900'>Title </label>
                             <br />
-                            <input type="text" name="name" value={user.displayName} readOnly className='border-2 bg-slate-100 text-amber-900 md:text-lg text-sm p-2 rounded-2xl my-2 w-full' required />
+                            <input type="text" name="title" placeholder='(e.g., “How I Grow Tomatoes Indoors”)
+                    ' className='border-2 bg-slate-100 text-amber-900 md:text-lg text-xs p-2 rounded-2xl my-2 w-full ' required />
+                            <br />
+
+                            <label className='label md:text-2xl  text-amber-900'>Plant Type/Topic</label>
+                            <br />
+                            <input type="text" name="plantType" placeholder='Enter your Plant type.' className='border-2 bg-slate-100 text-amber-900 md:text-lg text-xs p-2 rounded-2xl my-2 w-full' required />
+
+                            <br />
+
+
+                            <label className='label md:text-2xl  text-amber-900'>Difficulty Level</label>
+                            <br />
+                            <select name="level" className='border-2 bg-slate-100 text-amber-900 md:text-lg text-xs p-2 rounded-2xl my-2 w-full'>
+                                <option disabled selected hidden>Select one... </option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+
+                            <br />
+
+
+
+                            <label className='label md:text-2xl  text-amber-900'>Images URL</label>
+                            <br />
+                            <input type="url" name="images" placeholder='https://example.com/image.jpg' className='border-2 bg-slate-100 text-amber-900 md:text-lg text-xs p-2 rounded-2xl my-2 w-full' required />
                         </div>
 
-                        <div className='w-full'>
-                            <label className='label md:text-2xl text-xl text-amber-900'>Email</label>
+
+{/* ------------------------------------------------------------------------------------ */}
+
+                        <div>
+                            <label className='label md:text-2xl  text-amber-900'>Category </label>
                             <br />
-                            <input type="email" name="email" value={user.email} readOnly className='border-2 bg-slate-100 text-amber-900 md:text-lg text-sm p-2 rounded-2xl my-2 w-full' required />
+                            <select name="category_level" className='border-2 bg-slate-100 text-amber-900 md:text-lg text-xs p-2 rounded-2xl my-2 w-full'>
+                                <option disabled selected hidden>Select one...</option>
+                                <option value="composting">Composting</option>
+                                <option value="plant-care">Plant Care</option>
+                                <option value="vertical-gardening">Vertical Gardening</option>
+                                <option value="hydroponics">Hydroponics</option>
+                                <option value="indoor-plants">Indoor Plants</option>
+                            </select>
+
+                            <br />
+
+
+                            <label className='label md:text-2xl  text-amber-900'>Availability </label>
+                            <br />
+                            <select name="availability" className='border-2 bg-slate-100 text-amber-900 md:text-lg text-xs p-2 rounded-2xl my-2 w-full'>
+                                <option disabled selected hidden>Select a category...</option>
+                                <option value="public">Public</option>
+                                <option value="hidden">Hidden</option>
+                            </select>
+
+                            <div className='flex gap-3'>
+                                <div className='w-full'>
+                                    <label className='label md:text-2xl  text-amber-900'>Name</label>
+                                    <br />
+                                    <input type="text" name="name" value={user.displayName} readOnly className='border-2 bg-slate-100 text-amber-900 md:text-lg text-xs p-2 rounded-2xl my-2 w-full' required />
+                                </div>
+
+                                <div className='w-full'>
+                                    <label className='label md:text-2xl  text-amber-900'>Email</label>
+                                    <br />
+                                    <input type="email" name="email" value={user.email} readOnly className='border-2 bg-slate-100 text-amber-900 md:text-lg text-xs p-2 rounded-2xl my-2 w-full' required />
+                                </div>
+                            </div>
+
+                            <label className='label md:text-2xl  text-amber-900'>Description</label>
+                            <br />
+                            <textarea type="text" name="description" placeholder='type your description' className='border-2 bg-slate-100 text-amber-900 md:text-lg text-xs p-2 rounded-2xl my-2 w-full' required ></textarea>
+
                         </div>
                     </div>
-
-                    <label className='label md:text-2xl text-xl text-amber-900'>Description</label>
-                    <br />
-                    <textarea type="text" name="description" placeholder='type your description' className='border-2 bg-slate-100 text-amber-900 md:text-lg text-sm p-2 rounded-2xl my-2 w-full' required ></textarea>
-
-                    <button className='w-full md:text-2xl bg-green-500 py-2 rounded-2xl my-10 text-gray-100 font-bold hover:bg-green-600 hover:text-amber-800 transition duration-300'>Share Now</button>
+                    <button className='w-full md:text-2xl bg-green-500 py-2 rounded-2xl mt-5 text-gray-100 font-bold hover:bg-green-600 hover:text-amber-800 transition duration-300'>Share Now</button>
                 </form>
 
             </div >

@@ -8,11 +8,10 @@ const HomeLayouts = () => {
     return (
         <div className='dark:bg-gray-900 '>
 
-            <header>
-                <nav>
+                <nav className='sticky top-0 z-50'>
                     <Navbar></Navbar>
                 </nav>
-            </header>
+
             <main>
                 <Outlet></Outlet>
             </main>
