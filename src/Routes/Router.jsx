@@ -16,6 +16,8 @@ import MyTips from "../components/Components/TipsComponents/MyTips";
 import UpdateTips from "../components/Components/TipsComponents/UpdateTips";
 import AllGardeners from "../components/Components/AllGardeners";
 import ErrorPage from "../components/Components/ErrorPage";
+import DashBoardLayout from "../components/Layouts/DashBoardLayout";
+import DashboardHome from "../components/Components/DashboardComponent/DashboardHome";
 
 const router = createBrowserRouter([
     {
@@ -91,6 +93,22 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <UpdateTips></UpdateTips>
                 </PrivateRoute>
+            }
+        ]
+    },
+
+
+    // Dashboard 
+
+    {
+        path: "/dashboard",
+        element: <PrivateRoute>
+            <DashBoardLayout></DashBoardLayout>
+        </PrivateRoute>,
+        children:[
+            {
+                path: 'home',
+                element: <DashboardHome></DashboardHome>
             }
         ]
     },

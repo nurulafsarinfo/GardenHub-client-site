@@ -58,7 +58,7 @@ const MyTips = () => {
                             <Lottie animationData={emptyList} loop={true} className='w-full h-full' />
                         </div>
 
-                        : <div className="overflow-x-auto my-10 mx-20">
+                        : <div className="overflow-x-auto my-10  mx-5 lg:mx-20">
                             <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
                                 <thead className="bg-yellow-300 text-amber-900 text-left text-sm">
                                     <tr>
