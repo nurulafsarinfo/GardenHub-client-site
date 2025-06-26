@@ -16,7 +16,7 @@ const AllGardeners = () => {
                 {allgardeners.map(gardener => (
                     <div
                         key={gardener._id}
-                        className="max-w-md w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
+                        className="max-w-md w-full bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden"
                     >
                         {/* Header */}
                         <div className="flex gap-4 p-4 bg-indigo-100 dark:bg-indigo-300">

@@ -5,7 +5,7 @@ import Footer from "../components/Components/Footer";
 import UserProfile from "../components/Components/GardenersProfile";
 import Login from "../components/UserMaintain/Login";
 import Signup from "../components/UserMaintain/Signup";
-import FormGardenTips from "../components/Components/FormGardenTips";
+import ShareTips from "../components/Components/ShareTips";
 import PrivateRoute from "./privateRoute";
 import GardenersProfile from "../components/Components/GardenersProfile";
 import TipsPageLayout from "../components/Layouts/TipsPageLayout";
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
 
                 path: '/sharetips',
                 element: <PrivateRoute>
-                    <FormGardenTips></FormGardenTips>
+                    <ShareTips></ShareTips>
                 </PrivateRoute>
 
             },

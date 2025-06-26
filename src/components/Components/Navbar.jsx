@@ -43,7 +43,7 @@ const Navbar = () => {
                 
                 <div className="navbar-start">
                     <img src={logo} className='md:w-12 w-10 md:h-12 h-10 rounded-full' alt="" />
-                    <a className="font-semibold text-xl md:text-3xl text-white dark:text-slate-700 mx-2">GardenHub</a>
+                    <a className="font-semibold text-xl md:text-3xl text-white dark:text-slate-900 mx-2">GardenHub</a>
                 </div>
                 <div className="navbar-center  flex">
                     <NavLink to={'/'} className='text-xl font-medium text-amber-900 hover:bg-green-300
