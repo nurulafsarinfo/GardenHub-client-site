@@ -39,7 +39,7 @@ const Navbar = () => {
 
     return (
 
-            <div className="navbar  bg-green-500 dark:bg-green-500 shadow-lg md:px-14 px-8">
+            <div className="navbar  bg-[#98CD00]/80 backdrop-blur-md dark:bg-emerald-600/70 shadow-md md:px-14 px-8  transition duration-300">
                 
                 <div className="navbar-start">
                     <img src={logo} className='md:w-12 w-10 md:h-12 h-10 rounded-full' alt="" />
