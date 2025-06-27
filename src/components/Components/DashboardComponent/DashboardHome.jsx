@@ -1,12 +1,11 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthContext';
 
 const DashboardHome = () => {
-    const { user } = use(AuthContext);
+    const { user } = useContext(AuthContext);
     const [gardeners, setGardeners] = useState(0);
     const [totalTips, setTotalTips] = useState(0);
-    const [totalaMyTips, setTotalMyTips] = useState(0);
-
+    const [totalMyTips, setTotalMyTips] = useState(0);
 
     useEffect(() => {
         fetch('https://garden-hub-server-site.vercel.app/gardeners/count')
@@ -18,62 +17,67 @@ const DashboardHome = () => {
         fetch('https://garden-hub-server-site.vercel.app/sharedtips/count')
             .then(res => res.json())
             .then(data => setTotalTips(data.totalTips));
-    }, [])
+    }, []);
 
-    // get my total shared tips 
     useEffect(() => {
         if (user?.email) {
             fetch(`https://garden-hub-server-site.vercel.app/mytips/${user.email}?mode=count`)
                 .then(res => res.json())
                 .then(data => {
-                    console.log("MyTips count response:", data);
+                    // console.log("MyTips count response:", data);
                     setTotalMyTips(data.myTips);
                 })
-                .catch(err => console.log("Fetch error:", err));
+                .catch(err => console.error("Fetch error:", err));
         }
     }, [user?.email]);
 
     return (
-        <div className="p-6">
-            <h1 className="text-2xl font-bold mb-6">Dashboard Home</h1>
+        <div className="p-4 sm:p-6 lg:p-10">
+            <h1 className="text-3xl font-bold text-amber-800 mb-8">Welcome to Your Dashboard</h1>
 
-            <div className='mb-8'>
-                <p className='font-bold text-xl text-gray-600 mt-6'>Your Profile</p>
-                <div className='flex flex-col items-center md:w-[350px] w-full my-3 md:p-8 p-6 rounded-2xl bg-gradient-to-br from-green-500 to-yellow-300'>
-                    <div >
-                        <img src={user.photoURL} alt="User profile image" className='rounded-full' />
-                    </div>
-                    <div className='text-center mt-4'>
-                        <p className='font-semibold text-3xl text-white'>{user.displayName}</p>
-                        <p className='text-gray-500 md:text-lg'>{user.email}</p>
-                    </div>
+            {/* Profile Card */}
+            <section className="bg-gradient-to-br from-green-400 to-yellow-300 p-6 rounded-3xl shadow-2xl max-w-md mx-auto mb-12 ">
+                <div className="flex flex-col items-center text-center ">
+                    <img
+                        src={user?.photoURL}
+                        alt="Profile"
+                        className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-white shadow-md"
+                    />
+                    <h2 className="text-xl md:text-2xl font-semibold text-white mt-4">{user?.displayName}</h2>
+                    <p className="text-sm md:text-base text-white/80">{user?.email}</p>
                 </div>
+            </section>
+
+            {/* Stats Grid */}
+            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <StatCard
+                    title="My Shared Tips"
+                    value={totalMyTips}
+                    gradient="from-green-500 to-yellow-300"
+                    icon="🌿"
+                />
+                <StatCard
+                    title="Total Gardeners"
+                    value={gardeners}
+                    gradient="from-green-600 to-green-400"
+                    icon="👨‍🌾"
+                />
+                <StatCard title="Total Shared Tips" value={totalTips} gradient="from-yellow-400 to-green-300" icon="📚"
+                />
+            </section>
+        </div>
+    );
+};
+
+// Reusable StatCard component
+const StatCard = ({ title, value, gradient, icon }) => {
+    return (
+        <div className={`bg-gradient-to-br ${gradient} text-white p-6 rounded-2xl shadow-md flex items-center justify-between`}>
+            <div>
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className="text-4xl font-bold mt-2">{value}</p>
             </div>
-
-            <div className='md:flex gap-4 space-y-5 '>
-
-                {/* total shared tips  */}
-                <div className='flex items-center gap-4 bg-gradient-to-b from-green-500 to-yellow-300/70 w-full md:w-[300px] p-4 rounded-2xl shadow-lg'>
-                    <h1 className='text-white text-xl'>My Total Shared Tips</h1>
-                    <p className='text-5xl text-yellow-300 font-bold mt-1'>{totalaMyTips}</p>
-                </div>
-
-                <div className='flex items-center gap-4 bg-green-500 w-full md:w-[300px] p-6 rounded-2xl shadow-lg'>
-                    <h1 className='text-white text-xl'>Total Gardeners</h1>
-                    <p className='text-5xl text-yellow-300 font-bold mt-1'>{gardeners}</p>
-                </div>
-
-
-
-                {/* total shared tips  */}
-                <div className='flex items-center gap-4 bg-green-500 w-full md:w-[300px] p-4 rounded-2xl shadow-lg'>
-                    <h1 className='text-white text-xl'>Total Shared Tips</h1>
-                    <p className='text-5xl text-yellow-300 font-bold mt-1'>{totalTips}</p>
-                </div>
-            </div>
-
-
-
+            <div className="text-5xl">{icon}</div>
         </div>
     );
 };

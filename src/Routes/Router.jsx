@@ -111,6 +111,10 @@ const router = createBrowserRouter([
                 element: <DashboardHome></DashboardHome>
             },
             {
+                path: '/dashboard/allTips',
+                element: <BrowseTips></BrowseTips>
+            },
+            {
                 path: '/dashboard/mytips',
                 element: <MyTips></MyTips>
             },

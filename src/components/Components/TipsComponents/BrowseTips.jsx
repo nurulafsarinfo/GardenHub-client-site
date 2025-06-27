@@ -17,6 +17,7 @@ const BrowseTips = () => {
             // if (difficulty && difficulty !== 'All') {
             //     url += `?difficulty=${difficulty}`;
             // }
+            
 
             const url = difficulty === 'All'
                 ? 'https://garden-hub-server-site.vercel.app/sharedtips'

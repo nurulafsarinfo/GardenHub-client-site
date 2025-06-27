@@ -41,7 +41,7 @@ const ShareTips = () => {
     return (
         <div className='md:mx-20 mx-5'>
             <div className='shadow-2xl border-3 border-gray-200 rounded-2xl   mx-auto my-5 p-3 md:p-8 bg-green-100 '>
-                <p className='text-center mb-5  border-b-2 border-dashed border-gray-300 text-amber-900 text-3xl p-1'>Share Your Tips</p>
+                <p className='text-center mb-5  border-b-2 border-dashed border-gray-300 text-amber-900 text-xl font-medium md:text-3xl p-1'>Share Your Tips</p>
                 <form onSubmit={handleTipsForm}>
 
                     <div className='grid grid-cols-2 gap-5 md:gap-10'>
