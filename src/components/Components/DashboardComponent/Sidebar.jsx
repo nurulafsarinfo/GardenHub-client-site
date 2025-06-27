@@ -6,7 +6,7 @@ import logo from '../../../assets/Garden-Hub Logo.png';
 
 const Sidebar = () => {
     return (
-        <div className='w-40 md:w-64 h-screen bg-amber-600/50 p-4 md:pl-8 sticky top-0'>
+        <div className='w-40 md:w-64 h-screen bg-green-600/80 p-4 md:pl-8 sticky top-0'>
 
 
             <Link to={'/'}>
@@ -21,10 +21,8 @@ const Sidebar = () => {
             <ul className='space-y-2'>
 
                 <li><NavLink to={"/dashboard/home"} className={'text-lg md:text-2xl'}>Home</NavLink></li>
-                <li><NavLink to={"//dashboard/mytips"} className={'text-lg md:text-2xl'}>My Tips</NavLink></li>
-                <li><Link to={''}></Link></li>
-                <li><Link to={''}></Link></li>
-
+                <li><NavLink to={"/dashboard/mytips"} className={'text-lg md:text-2xl'}>My Tips</NavLink></li>
+                <li><NavLink to={"/dashboard/shareTips"} className={'text-lg md:text-2xl'}>Share Tips</NavLink></li>
             </ul>
         </div>
     );

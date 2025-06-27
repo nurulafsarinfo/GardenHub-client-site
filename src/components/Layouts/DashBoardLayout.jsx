@@ -9,7 +9,7 @@ const DashBoardLayout = () => {
                 <Sidebar />
             </aside>
 
-            <main className='flex-1 p-4'>
+            <main className='flex-1 p-4 overflow-hidden'>
                 <Outlet></Outlet>
             </main>
         </div>
