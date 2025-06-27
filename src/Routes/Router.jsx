@@ -81,7 +81,7 @@ const router = createBrowserRouter([
             {
                 path: "/tips/mytips/:email",
                 hydrateFallbackElement: <Loader></Loader>,
-                loader: ({ params }) => fetch(`https://garden-hub-server-site.vercel.app/mytips/${params?.email}`),
+                loader: ({ params }) => fetch(`https://garden-hub-server-site.vercel.app/mytips/${params?.email}`).then(res => res.json()),
                 element: <PrivateRoute>
                     <MyTips></MyTips>
                 </PrivateRoute>
@@ -107,8 +107,12 @@ const router = createBrowserRouter([
         </PrivateRoute>,
         children:[
             {
-                path: 'home',
+                path: '/dashboard',
                 element: <DashboardHome></DashboardHome>
+            },
+            {
+                paht: '/dashboard/mytips',
+                element: <MyTips></MyTips>
             }
         ]
     },
