@@ -91,7 +91,7 @@ const MyTips = () => {
                         </div>
 
                         : <>
-                            <h2 className='text-center text-2xl font-medium text-amber-900 my-3'>My Tips</h2>
+                            <h2 className='text-center text-2xl font-medium text-amber-900 dark:text-green-500 my-3'>My Tips</h2>
                             <div className="overflow-x-auto my-5  mx-5 lg:mx-20">
                                 <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
                                     <thead className="bg-yellow-300 text-amber-900 text-left text-sm">

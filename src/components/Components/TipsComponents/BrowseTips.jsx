@@ -17,7 +17,7 @@ const BrowseTips = () => {
             // if (difficulty && difficulty !== 'All') {
             //     url += `?difficulty=${difficulty}`;
             // }
-            
+
 
             const url = difficulty === 'All'
                 ? 'https://garden-hub-server-site.vercel.app/sharedtips'
@@ -47,9 +47,10 @@ const BrowseTips = () => {
 
     return (
         <div>
-            <div className="overflow-x-auto my-5 md:my-10 mx-8 md:mx-20">
+            <div className=" overflow-hidden my-5 md:my-10 mx-8 md:mx-20">
+                <p className='text-center text-amber-900 dark:text-green-500 text-2xl md:text-3xl'>Browse All Tips</p>
                 <div className='my-5'>
-                    <label className='mr-3 text-amber-900 dark:text-base-200'>Filter by Difficulty Level:</label>
+                    <label className='mr-3 text-amber-900 dark:text-green-500'>Filter by Difficulty Level:</label>
                     <select
                         value={selectedDifficulty}
                         onChange={handleFilterChange}
@@ -63,44 +64,46 @@ const BrowseTips = () => {
 
                 {loading ?
                     <Loader></Loader> :
-                    <table className="min-w-full  bg-white shadow-md rounded-lg overflow-hidden">
-                        <thead className="bg-green-500 text-amber-900 text-left text-sm ">
-                            <tr>
-                                <th className="px-8 py-3 text-center">Image</th>
-                                <th className="px-4 py-3 text-center">Title</th>
-                                <th className="px-4 py-3 text-center">Category</th>
-                                <th className="px-4 py-3 text-center">Level</th>
-                                <th className="px-4 py-3 text-center">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody className="text-gray-700">
+                    <div className='overflow-x-auto'>
+                        <table className="min-w-full overflow-hidden bg-white shadow-md rounded-lg ">
+                            <thead className="bg-green-500 text-amber-900 text-left text-sm ">
+                                <tr>
+                                    <th className="px-8 py-3 text-center">Image</th>
+                                    <th className="px-4 py-3 text-center">Title</th>
+                                    <th className="px-4 py-3 text-center">Category</th>
+                                    <th className="px-4 py-3 text-center">Level</th>
+                                    <th className="px-4 py-3 text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-gray-700">
 
-                            {
-                                alltips.map(tipsrow => {
-                                    return (
-                                        <tr key={tipsrow._id} className="border-b border-b-amber-800">
-                                            <td className="px-7 py-3 text-center">
-                                                <img
-                                                    src={tipsrow.images}
-                                                    alt="Plant 2"
-                                                    className="w-16 h-16 object-cover rounded-md"
-                                                />
-                                            </td>
-                                            <td className="px-4 py-3 ">{tipsrow.title}</td>
-                                            <td className="px-4 py-3 text-center">{tipsrow.category_level
-                                            }</td>
-                                            <td className='text-center'>{tipsrow.level}</td>
-                                            <td className="px-4 py-3 text-center">
-                                                <Link to={`/tips/details/${tipsrow._id}`} className=" btn bg-green-500 hover:bg-green-600 text-white text-[10px] px-4 py-1 rounded-md md:text-sm">
-                                                    See More
-                                                </Link>
-                                            </td>
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </table>
+                                {
+                                    alltips?.map(tipsrow => {
+                                        return (
+                                            <tr key={tipsrow._id} className="border-b border-b-amber-800">
+                                                <td className="px-7 py-3 text-center">
+                                                    <img
+                                                        src={tipsrow.images}
+                                                        alt="Plant 2"
+                                                        className="w-16 h-16 object-cover rounded-md"
+                                                    />
+                                                </td>
+                                                <td className="px-4 py-3 ">{tipsrow.title}</td>
+                                                <td className="px-4 py-3 text-center">{tipsrow.category_level
+                                                }</td>
+                                                <td className='text-center'>{tipsrow.level}</td>
+                                                <td className="px-4 py-3 text-center">
+                                                    <Link to={`/tips/details/${tipsrow._id}`} className=" btn bg-green-500 hover:bg-green-600 text-white text-[10px] px-4 py-1 rounded-md md:text-sm">
+                                                        See More
+                                                    </Link>
+                                                </td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 }
             </div>
         </div>

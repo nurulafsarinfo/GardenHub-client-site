@@ -15,7 +15,7 @@ const Sidebar = () => {
     return (
         <aside className="w-full md:w-64 h-screen bg-gradient-to-b from-green-700 to-green-500 text-white p-6 sticky top-0 flex flex-col">
             {/* Logo Section */}
-            <Link to="/" className="flex items-center gap-3 mb-10">
+            <Link to="/" className="flex items-center gap-3 mb-10 md:pt-0 pt-8">
                 <img
                     src={logo}
                     alt="Garden Hub Logo"

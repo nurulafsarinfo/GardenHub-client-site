@@ -21,11 +21,11 @@ const Navbar = () => {
     // }
 
     const links = <>
-        <li><NavLink to={'/'} className='text-sm font-medium text-amber-900 hover:bg-green-300 px-3 py-2 rounded-sm lg:inline-block hidden'>Home</NavLink></li>
-        <li><NavLink to={'/explorgardeners'} className='text-sm font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Gardeners </NavLink></li>
-        <li><NavLink to={'/tips/browsetips'} className='text-sm font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Browse Tips </NavLink></li>
+        <li><NavLink to={'/'} className='text-sm font-medium text-amber-900  dark:text-yellow-300 dark:hover:text-amber-900 hover:bg-green-300 px-3 py-2 rounded-sm lg:inline-block hidden'>Home</NavLink></li>
+        <li><NavLink to={'/explorgardeners'} className='text-sm font-medium  dark:text-yellow-300 dark:hover:text-amber-900 text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Gardeners </NavLink></li>
+        <li><NavLink to={'/tips/browsetips'} className='text-sm font-medium  dark:text-yellow-300 dark:hover:text-amber-900 text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Browse Tips </NavLink></li>
         <li>
-            <NavLink to={'/sharetips'} className='text-sm font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Share Tips </NavLink></li>
+            <NavLink to={'/sharetips'} className='text-sm font-medium text-amber-900  dark:text-yellow-300 dark:hover:text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> Share Tips </NavLink></li>
         <li></li>
     </>
 
@@ -48,11 +48,11 @@ const Navbar = () => {
 
     return (
 
-        <div className="navbar  bg-[#98CD00]/80 backdrop-blur-md dark:bg-emerald-600/70 shadow-md md:px-14 px-8  transition duration-300">
+        <div className="navbar  bg-[#98CD00]/80 backdrop-blur-md dark:bg-emerald-600/90 shadow-md md:px-14 px-8  transition duration-300">
 
             <div className="navbar-start">
                 <img src={logo} className='md:w-12 w-10 md:h-12 h-10 rounded-full' alt="" />
-                <a className="font-semibold text-xl md:text-3xl text-white dark:text-slate-900 mx-2">GardenHub</a>
+                <a className="font-semibold text-xl md:text-3xl text-white mx-2">GardenHub</a>
             </div>
             <div className="navbar-center  ">
                 <ul className='flex'>
@@ -63,9 +63,9 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                <NavLink to={`/tips/mytips/${user?.email}`} className='text-sm font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> My Tips </NavLink>
+                                <NavLink to={`/tips/mytips/${user?.email}`} className='text-sm font-medium text-amber-900  dark:text-yellow-300 dark:hover:text-amber-900 lg:inline-block hidden hover:bg-green-300 rounded-sm px-2 py-2'> My Tips </NavLink>
 
-                                <NavLink to={`/dashboard`} className='text-sm font-medium text-amber-900 lg:inline-block hidden hover:bg-green-300 border rounded-sm px-2 py-2'> Dashboard </NavLink>
+                                <NavLink to={`/dashboard`} className='text-sm font-medium text-amber-900 dark:text-yellow-300 dark:hover:text-amber-900 lg:inline-block hidden hover:bg-green-300 border rounded-sm px-2 py-2'> Dashboard </NavLink>
                             </> : ''
                     }
                 </ul>
