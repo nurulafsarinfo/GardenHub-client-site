@@ -66,6 +66,10 @@ const SubscriptionPage = () => {
     );
 };
 
+
+
+
+
 const PlanCard = ({ plan, price, features, selectedPlan, handleSelect }) => {
     const isSelected = selectedPlan === plan;
 
@@ -94,9 +98,9 @@ const PlanCard = ({ plan, price, features, selectedPlan, handleSelect }) => {
             </div>
 
             <div className='mb-5'>
-                <ol className={`text-sm space-y-2 ${isSelected ? "text-green-500" : ""}`}>
+                <ol className={`text-sm space-y-2 ${isSelected ? "text-green-500" : "text-gray-400"}`}>
                     {features.map((feature, index) => (
-                        <li key={index} className='flex gap-2 items-center'>
+                        <li key={index} className='flex gap-2 items-center '>
                             <IoMdCheckmarkCircleOutline size={20} />
                             {feature}
                         </li>

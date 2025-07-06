@@ -11,7 +11,7 @@ const Home = () => {
 
     return (
         <div >
-            <header className='w-11/12 mx-auto'>
+            <header className='w-11/12 h-[65vh] mx-auto'>
                 <Slider3D></Slider3D>
             </header>
            

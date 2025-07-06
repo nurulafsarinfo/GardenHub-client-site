@@ -35,7 +35,7 @@ const GardenersProfile = ({ gardener }) => {
                     <p className="text-sm font-semibold text-gray-800">{experience_years} Years</p>
                 </div>
                 <div>
-                    <p className="text-sm font-semibold text-gray-700 underline mb-1">Bio</p>
+                    <p className="text-sm font-semibold text-gray-700">Bio</p>
                     <p className="text-sm text-gray-600 leading-snug">{bio}</p>
                 </div>
             </div>
@@ -43,7 +43,5 @@ const GardenersProfile = ({ gardener }) => {
     );
 };
 
-
-// };
 
 export default GardenersProfile;

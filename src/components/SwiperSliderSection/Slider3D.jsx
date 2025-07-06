@@ -66,11 +66,11 @@ const Slider3D = () => {
                             <img
                                 src={img.src} alt={`Slide ${i + 1}`
                                 }
-                                className="h-[550px] w-full object-cover mx-auto rounded-xl shadow-md "
+                                className="h-[450px] w-full object-cover mx-auto rounded-xl shadow-md "
                             />
 
                             <div className="absolute mx-10 md:w-[700px] h-55 md:h-70  left-7 bottom-20 md:bottom-5 bg-black/50 text-white p-5 rounded-lg">
-                                <h3 className="text-2xl md:text-5xl italic my-3 font-semibold">
+                                <h3 className="text-2xl md:text-4xl italic my-3 font-semibold">
                                    
                                     <Typewriter
                                     words={[img.title]}
@@ -81,7 +81,7 @@ const Slider3D = () => {
                                     delaySpeed={2000}
                                     />
                                 </h3>
-                                <p className="text-lg md:text-2xl text-gray-300">-{img.description}</p>
+                                <p className="text-lg text-gray-300">-{img.description}</p>
 
                                 <Link to={'/tips/browsetips'}>
                                 <button className="md:text-lg font-semibold border-2 px-7 py-1  rounded-full md:my-10 mt-2 hover:bg-green-600"> Browse All Tips</button></Link>
