@@ -47,7 +47,8 @@ Garden Hub is a vibrant community platform designed for gardening enthusiasts to
 
 ---
 
-*Replace `YOUR_LIVE_SITE_URL_HERE` with your actual deployed site URL.*
+## Live Link- https://gardeners-user-auth.web.app/
+[Live Site URL](https://gardeners-user-auth.web.app/)
 
 ---
 
