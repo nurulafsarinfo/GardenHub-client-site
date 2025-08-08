@@ -51,4 +51,75 @@ Garden Hub is a vibrant community platform designed for gardening enthusiasts to
 
 ---
 
+
+# 🌿 Garden-Hub – A Gardening Community & Resource Hub
+
+Garden-Hub is an online platform where gardening enthusiasts can connect, share tips, ask plant care questions, and discover local gardening events.  
+For this assignment, the **Banana** category is featured with guides, community discussions, and resources for banana cultivation.
+
+---
+
+## 📸 Project Preview
+![Garden-Hub Banner](./public/banner.png) <!-- Replace with your own image -->
+
+---
+
+## 🖌️ Tech Stack
+**Frontend:**
+- [React.js](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [DaisyUI](https://daisyui.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+
+**Backend:**
+- [Express.js](https://expressjs.com/)
+- [mongoDB](https://mongodb-atlas.com/)
+
+**Others:**
+- Google Fonts (Poppins)
+
+---
+
+---
+
+## 📦 Dependencies Used
+
+**Frontend:**
+- **react** – JavaScript library for building the user interface.
+- **react-dom** – React DOM renderer for web applications.
+- **tailwindcss** – Utility-first CSS framework for styling.
+- **daisyui** – Tailwind CSS component library with theming support.
+- **react-icons** – Icon library for React projects.
+- **autoprefixer** – PostCSS plugin for adding vendor prefixes to CSS.
+- **postcss** – CSS processing tool used by Tailwind.
+
+**Backend:**
+- **express** – Web framework for Node.js to handle API routes and backend logic.
+- **cors** – Middleware to enable cross-origin requests.
+- **dotenv** – Loads environment variables from a `.env` file.
+
+**Development Tools:**
+- **vite** – Fast build tool and dev server for React.
+- **eslint** – JavaScript linter to maintain code quality.
+
+---
+
+## 🛠️ Run the Project Locally – Step-by-Step
+
+### 1️⃣ Prerequisites
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v16+ recommended)
+- npm (comes with Node.js) or yarn
+
+### 2️⃣ Clone the repository
+```bash
+git clone (https://github.com/nurulafsarinfo/GardenHub-client-site)
+cd garden-hub
+
+cd client
+npm install
+npm run dev
+
+---
+
 Thank you for checking out Garden Hub! Happy Gardening! 🌱🌸
