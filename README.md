@@ -1,8 +1,11 @@
-# Garden Hub
+# 🌿 Garden-Hub – A Gardening Community & Resource Hub
 
 [Live Site URL](https://gardeners-user-auth.web.app/)
 
 ---
+
+## 📸 Project Preview
+![Garden-Hub Banner](./public/banner.png) <!-- Replace with your own image -->
 
 ## Project Description
 Garden Hub is a vibrant community platform designed for gardening enthusiasts to share tips, connect with local gardeners, ask plant care questions, and join gardening events. The platform supports interests like composting, hydroponics, vertical gardens, and more, fostering a rich resource hub for gardeners of all levels.
@@ -48,19 +51,6 @@ Garden Hub is a vibrant community platform designed for gardening enthusiasts to
 ---
 
 ## Live Link- https://gardeners-user-auth.web.app/
-
----
-
-
-# 🌿 Garden-Hub – A Gardening Community & Resource Hub
-
-Garden-Hub is an online platform where gardening enthusiasts can connect, share tips, ask plant care questions, and discover local gardening events.  
-For this assignment, the **Banana** category is featured with guides, community discussions, and resources for banana cultivation.
-
----
-
-## 📸 Project Preview
-![Garden-Hub Banner](./public/banner.png) <!-- Replace with your own image -->
 
 ---
 
